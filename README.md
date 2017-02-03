@@ -1,1 +1,0 @@
-This is our weather map page which can show you the weather informations of a place after you chose one place on the map.
