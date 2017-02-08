@@ -10,8 +10,21 @@ html {
 }
 
 header {
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   height: 40px;
+}
+header > img {
+  height: 60px;
+  width: 60px;
+}
+header > a {
+  text-decoration: none;
+  color: black;
+}
+header > a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
 }
 
 .container {
@@ -39,27 +52,26 @@ img {
   color: white;
   font-size: 2em;
   border: none;
+  outline: none;
 }
-/*::-webkit-input-placeholder {color: white;}*/
-.search-nav {
-  margin-top: 20px;
 
+.search-nav {
+  margin-top: 60px;
 }
 
 .nav-btn {
   height: 200px;
   width: 150px;
-  margin-top: 70px;
+  margin-top: 150px;
   color: rgb(100, 100, 100);
   text-align: center;
-  padding: 30px;
+  padding: 85px;
 }
 
 /*Explore button*/
 .row > nav:first-child {
   float: right;
   background-color: rgba(225, 229, 88, 0.5);
-  
 }
 .row > nav:first-child:hover {
   filter: brightness(1.35);
@@ -80,8 +92,9 @@ img {
 
 #footer {
   position: absolute;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   height: 60px;
   bottom: 0px;
   width: 100%;
+  margin: auto;
 }
