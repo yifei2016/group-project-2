@@ -4,7 +4,7 @@ html {
 
 #body {
   overflow: hidden;
-  height: 100% vheight;
+  height: 100vh;
   background: linear-gradient(75deg, #8b8e83, #d0d1cd);
   margin-bottom: 0px;
 }
