@@ -12,6 +12,7 @@ html {
 header {
   /*border: 1px solid green;*/
   height: 40px;
+  background-color:#b4c89e ;
 }
 header > img {
   height: 60px;
@@ -34,12 +35,15 @@ header > a:hover {
   width: 100vw;
 }
 
-#map {
-  width: 400px;
-  height: 400px;
-  padding: 0px;
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+.media-icon-group{
+  display: flex;
+  justify-content: center;
+}
 img {
   background-size: cover;
   overflow: hidden;
@@ -89,12 +93,10 @@ img {
   color: white;
   font-size: 1.2em;
 }
-
-#footer {
-  position: absolute;
-  /*border: 1px solid black;*/
-  height: 60px;
-  bottom: 0px;
-  width: 100%;
-  margin: auto;
+#map {
+        height: 400px;
+        width: 70%;
+       }
+footer {
+  background-color: #b4c89e;
 }
