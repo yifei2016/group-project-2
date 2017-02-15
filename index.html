@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>MapGo</title>
-    
+    <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -10,7 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <meta charset="utf-8">
+
+    
     
   </head>
   
@@ -36,6 +37,11 @@
         </nav>
       </div>
     </div>
+
+    <div id="weather-container">
+      
+    </div>
+
     <footer>
       <div class="container-fluid">
         <div class="footer">
@@ -48,10 +54,10 @@
           </address>
           <div class="media-icon-group">
             <div>
-              <a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i></a>  
+              <a href="#"><i class="fa fa-twitter-square fa-2x media-icon" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook-official fa-2x media-icon" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram fa-2x media-icon" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-envelope-o fa-2x media-icon" aria-hidden="true"></i></a>  
             </div>
           </div>
           <p class="contact-us">Click on the button above to contact us.</p>
@@ -66,15 +72,9 @@
           zoom: 8
         });
       }
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=initMap"
     async defer></script>
+    <script src="script.js"></script>
   </body>
 </html> 
