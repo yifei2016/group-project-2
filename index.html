@@ -15,8 +15,9 @@
   </head>
   
   <body id="body">
-    <div class="container-fluid">      
-      <header> <img src="logomapgo.png"> <a href="#">About us</a> | <a href="#">How it works</a> </header>
+    <header> <img src="logomapgo.png"> <a href="#">About us</a> | <a href="#">How it works</a> </header>
+    <div class="container-fluid" >      
+      
       
       <div class="row offset-md-2 col-md-10 search-nav">
         <input type="text" class="col-md-8" id="search" autofocus>
@@ -34,36 +35,29 @@
           Weather
         </nav>
       </div>
-      <footer>
-        <div class="container-fluid">
-          <div class="row" class="footer">
-          </div>
-          <div class="row" >
-            <div class="col-lg-12" >
-              <address class="text-center">
-                <strong>Norstan</strong>
-                <br> Brusparken
-                <br> Göteborg, 12345
-                <br>
-                <abbr title="Phone">Telefon:</abbr>0702555555
-              </address> 
-            </div>
-          </div>
-          <div class="row media-icon-group">
+    </div>
+    <footer>
+      <div class="container-fluid">
+        <div class="footer">
+          <address class="text-center">
+            <strong>Norstan</strong>
+            <br> Brusparken
+            <br> Göteborg, 12345
+            <br>
+            <abbr title="Phone">Telefon:</abbr>0702555555
+          </address>
+          <div class="media-icon-group">
             <div>
               <a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i></a>  
             </div>
           </div>
-          <div class="row media-icon-group">
-            <p class="text-center contact-us">Click on the button above to contact us.</p>
-          </div>
+          <p class="contact-us">Click on the button above to contact us.</p>
         </div>
-      </footer>
-    </div>
-    
+      </div>
+    </footer>
     <script>
       var map;
       function initMap() {
