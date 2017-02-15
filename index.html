@@ -2,44 +2,42 @@
 <html>
   <head>
     <title>MapGo</title>
-    
+      
     <link type="text/css" rel="stylesheet" href="style.css">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   
     <meta charset="utf-8">
     
   </head>
   
   <body id="body">
+    <div class="header"> <img src="logomapgo.png"> <a href="#">About us</a> | <a href="#">How it works</a> </div>
+
     <div class="container">      
-      <header> <img src="logomapgo.png"> <a href="#">About us</a> | <a href="#">How it works</a> </header>
-      
-      <div class="row offset-md-2 col-md-10 search-nav">
-        <input type="text" class="col-md-8" id="search" autofocus>
-        <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
+      <div class="search-nav">
+        <input type="text" id="search" autofocus>
+        <button type="button" id="go">Go!</button>
       </div>
       
-      <div class="row">
+      <section class="row">
         
-        <nav class="col-md-2 nav-btn">
+        <nav class="nav-btn" id="left">
           Explore
         </nav>
         
-        <div class="row col-md-8" id="map">
+        <nav id="map">
           <img src="mappic.png">
-        </div>
+        </nav>
         
-        <nav class="col-md-2 nav-btn">        
+        <nav class="nav-btn" id="right">        
           Weather
         </nav>
-      </div>
+      </section>
       
-      <footer class="row col-md-12 footer" id="footer">footer här</footer>
+      
     </div>
+    
+    <div id="footer">footer här</div>
       
   </body>
 </html> 

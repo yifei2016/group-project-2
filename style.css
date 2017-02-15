@@ -1,52 +1,52 @@
-html {
-  overflow: hidden;
-}
 
 #body {
-  overflow: hidden;
-  height: 100% vheight;
+  /*overflow: hidden;*/
+  height: 100%;
   background: linear-gradient(75deg, #8b8e83, #d0d1cd);
   margin-bottom: 0px;
+  font-family: Verdana;
 }
 
-header {
-  /*border: 1px solid green;*/
-  height: 40px;
+.header {
+  border: 1px solid green;
+  height: 60px;
+  width: 100%;
+  display: block;
+  margin-bottom: 25px;
 }
-header > img {
+.header > img {
   height: 60px;
   width: 60px;
 }
-header > a {
+.header > a {
   text-decoration: none;
   color: black;
 }
-header > a:hover {
+.header > a:hover {
   text-decoration: none;
   cursor: pointer;
   color: white;
 }
 
 .container {
-  position: absolute;
+  position: relative;
   overflow: hidden;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  border: 1px solid green;
+  
 }
 
-#map {
-  width: 400px;
-  height: 400px;
-  padding: 0px;
-}
 
-img {
-  background-size: cover;
-  overflow: hidden;
-}
-
-#search {
+.search-nav {
+  margin: auto;
+  width: 50%;
+  height: 60px;
   display: inline-block;
+ 
+}
+
+#search { 
   height: 60px;
   background-color: rgba(0,0,0,0.1);
   color: white;
@@ -55,22 +55,63 @@ img {
   outline: none;
 }
 
-.search-nav {
-  margin-top: 60px;
+.search-nav > #go {
+  height: 60px;
+  width: 60px;
+  background-color: red;
+ 
 }
 
+.row {
+  width: 50%;
+  margin: auto;
+  position: relative;
+  /*max-height: 400px;*/
+  display: block;
+}
+#left {
+  height: 300px;
+  margin-top: 10px;
+  display: block;
+  float: left;
+}
+#right {
+  height: 300px;
+  margin-top: 10px;
+  display: block;
+  float: right;
+}
+/*
 .nav-btn {
   height: 200px;
-  width: 150px;
-  margin-top: 150px;
+  width: 100px;
   color: rgb(100, 100, 100);
   text-align: center;
-  padding: 85px;
+  padding-top: 85px;
+  display: inline-block;
+  /*position: absolute;
+  margin: auto;
+}
+*/
+#map > img {
+  background-size: cover;
+  overflow: hidden;
+  width: 500px;
+  height: 300px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
 }
 
-/*Explore button*/
+
+#go:hover {
+  filter: brightness(1.35);
+  font-size: 1.2em;
+  color: white;
+}
+/*=== Explore button ===*/
 .row > nav:first-child {
-  float: right;
+  
   background-color: rgba(225, 229, 88, 0.5);
 }
 .row > nav:first-child:hover {
@@ -79,10 +120,10 @@ img {
   font-size: 1.2em;
 }
 
-/*Weather button*/
+/*=== Weather button ===*/
 .row > nav:nth-child(3) {
   background-color: rgba(94, 149, 181, 0.5);
-  margin-left: 14px;
+  
 }
 .row > nav:nth-child(3):hover {
   filter: brightness(1.35);
@@ -92,9 +133,14 @@ img {
 
 #footer {
   position: absolute;
-  /*border: 1px solid black;*/
-  height: 60px;
+  border: 1px solid red;
+  height: 80px;
   bottom: 0px;
   width: 100%;
-  margin: auto;
+
+  text-align: center;
+  overflow: hidden;
+  /*display: inline-block;*/
 }
+
+/*=== MEDIA QUERIES ===*/
