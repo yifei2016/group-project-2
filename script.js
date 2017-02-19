@@ -25,19 +25,21 @@ window.addEventListener("load",function(event){
     	req.onreadystatechange = function(event) {
       		if( req.status == 200 && req.readyState == 4){
         		let res = JSON.parse(req.responseText);
-        		console.log(req.responseText)
-        
-        		let data = `weather: ${res.weather[0].main}, 
+                let data = `weather: ${res.weather[0].main}, 
         		description: ${res.weather[0].description}, 
         		temperature: ${res.main.temp},
         		wind speed: ${res.wind.speed}, 
         		cloud: ${res.clouds.all}`;
-        		document.getElementById('weather-container').innerHTML = data;
+                let weather = document.getElementById("weather");
+        		weather.innerHTML = data;
    			}
+
  		}
 		req.send();
   	}
-  	go.addEventListener("click",putMarkOnMap);
-  	
-   
+  	go.addEventListener("click",putMarkOnMap); 
 });
+
+$(document).ready(function(){
+      $('.carousel').carousel();
+    });

@@ -1,39 +1,20 @@
-html {
-  overflow: hidden;
-}
 
-#body {
+/*#body {
   overflow: hidden;
   height: 100vh;
   background: linear-gradient(75deg, #8b8e83, #d0d1cd);
   margin-bottom: 0px;
   
-}
+}*/
 
-header {
-  /*border: 1px solid green;*/
-  height: 6vh;
-  background-color:#b4c89e ;
-}
 header > img {
   height: 60px;
   width: 60px;
 }
-header > a {
-  text-decoration: none;
-  color: black;
-}
-header > a:hover {
-  text-decoration: none;
-  cursor: pointer;
-  color: white;
-}
 
-.container {
-  position: absolute;
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
+nav a:hover {
+  cursor: pointer;
+  color: white !important;
 }
 
 img {
@@ -56,8 +37,8 @@ img {
 }
 
 .nav-btn {
-  height: 200px;
-  width: 150px;
+  height: 30vh;
+    width: 70%;
   margin-top: 150px;
   color: rgb(100, 100, 100);
   text-align: center;
@@ -86,15 +67,18 @@ img {
   font-size: 1.2em;
 }
 #map {
-        height: 400px;
-        width: 70%;
-       }
+    height: 30vh;
+    width: 70%;
+    /*transition: width 11s linear;*/
+}
+
+
 footer {
   padding:20px 0px 0px 0px;
-  position:absolute;
-  bottom: 0px;
-  width:100vw;
-  height:20vh;
+  /*position:absolute;*/
+  /*bottom: 0px;*/
+  width:  100vw;
+  /*height: 20vh;*/
   background-color: #b4c89e;
 }
 footer > div{

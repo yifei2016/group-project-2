@@ -8,41 +8,49 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-    
-    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->  
   </head>
   
   <body id="body">
-    <header> <img src="logomapgo.png"> <a href="#">About us</a> | <a href="#">How it works</a> </header>
-    <div class="container-fluid" >      
-      
-      
-      <div class="row offset-md-2 col-md-10 search-nav">
-        <input type="text" class="col-md-8" id="search" autofocus>
-        <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded" style="background-color: #b4c89e;">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <img src="logomapgo.png" style="width: 3em;"> 
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="about.html">About us</a>
+          <a class="nav-item nav-link" href="#">How it works</a>
+
+        </div>
       </div>
-      
-      <div class="row">
+    </nav>
+    <br><br><br>
+
+    <div class="container-fluid"> 
+       <div class="row offset-md-2 col-md-10 search-nav">
+          <input type="text" class="col-md-8" id="search" autofocus>
+          <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
+       </div>
+
+      <div class="row" >
         <nav class="col-md-2 nav-btn">
           Explore
         </nav>
         <div class="row col-md-8">
            <div id="map"></div>
         </div>
-        <nav class="col-md-2 nav-btn">        
-          Weather
+        <nav class="col-md-2 nav-btn" id="weather">        
         </nav>
       </div>
     </div>
-
-    <div id="weather-container">
-      
-    </div>
-
-    <footer>
+    
+   <footer style="position:absolute; bottom:0px;">
       <div class="container-fluid">
         <div class="footer">
           <address class="text-center">
@@ -64,6 +72,7 @@
         </div>
       </div>
     </footer>
+    
     <script>
       var map;
       function initMap() {
