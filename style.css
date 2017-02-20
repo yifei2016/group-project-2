@@ -31,19 +31,16 @@
 .container {
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  /*height: 100vh;*/
   width: 100%;
   border: 1px solid green;
-  
 }
-
 
 .search-nav {
   margin: auto;
   width: 50%;
-  height: 60px;
-  display: inline-block;
- 
+  height: 100px;
+  display: inline-block; 
 }
 
 #search { 
@@ -58,51 +55,65 @@
 .search-nav > #go {
   height: 60px;
   width: 60px;
-  background-color: red;
- 
+  background-color: #56dd56;
 }
 
 .row {
-  width: 50%;
+  width: 64%;
   margin: auto;
   position: relative;
-  /*max-height: 400px;*/
+  max-height: 400px;
   display: block;
 }
 #left {
   height: 300px;
-  margin-top: 10px;
-  display: block;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
   float: left;
+  margin: auto;
+  margin-top: 10px;
+  z-index: -1;
 }
 #right {
   height: 300px;
-  margin-top: 10px;
-  display: block;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
   float: right;
+  margin: auto;
+  margin-top: 10px;
+  z-index: -1;
 }
-/*
-.nav-btn {
-  height: 200px;
+
+.nav-btn { 
+  /*height: 200px;
   width: 100px;
   color: rgb(100, 100, 100);
   text-align: center;
   padding-top: 85px;
   display: inline-block;
-  /*position: absolute;
-  margin: auto;
+  position: absolute;
+  margin: auto;*/
 }
-*/
-#map > img {
-  background-size: cover;
+
+#map {
+  /*background-size: cover;
   overflow: hidden;
   width: 500px;
-  height: 300px;
-  display: block;
+  height: 300px;*/
+  display: inline-block;
   margin: auto;
   margin-top: 10px;
 }
-
+#map > img {
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  overflow: hidden;
+  /*margin: auto;*/
+  
+}
 
 #go:hover {
   filter: brightness(1.35);
@@ -111,7 +122,6 @@
 }
 /*=== Explore button ===*/
 .row > nav:first-child {
-  
   background-color: rgba(225, 229, 88, 0.5);
 }
 .row > nav:first-child:hover {
@@ -123,7 +133,6 @@
 /*=== Weather button ===*/
 .row > nav:nth-child(3) {
   background-color: rgba(94, 149, 181, 0.5);
-  
 }
 .row > nav:nth-child(3):hover {
   filter: brightness(1.35);
@@ -136,11 +145,11 @@
   border: 1px solid red;
   height: 80px;
   bottom: 0px;
+  display: block;
   width: 100%;
-
+  right: 0;
   text-align: center;
   overflow: hidden;
-  /*display: inline-block;*/
 }
 
 /*=== MEDIA QUERIES ===*/
