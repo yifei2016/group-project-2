@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->  
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>  -->
   </head>
   
   <body id="body">
@@ -37,19 +37,17 @@
           <input type="text" class="col-md-8" id="search" autofocus>
           <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
        </div>
+    </div> 
 
-      <div class="row" >
-        <nav class="col-md-2 nav-btn">
-          Explore
-        </nav>
-        <div class="row col-md-8">
-           <div id="map"></div>
-        </div>
-        <nav class="col-md-2 nav-btn" id="weather">        
-        </nav>
+    <div class="container" id="content"> 
+      <div class="row">
+        <div class="col-sm-3 align-self-center" id="weather"></div>
+        <div class="col-sm-6" id="map"></div>
+        <div class="col-sm-3 align-self-center explore" ></div>
       </div>
+  
     </div>
-    
+     
    <footer style="position:absolute; bottom:0px;">
       <div class="container-fluid">
         <div class="footer">
@@ -85,5 +83,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=initMap"
     async defer></script>
     <script src="script.js"></script>
+
+        
+
   </body>
 </html> 

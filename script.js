@@ -41,5 +41,5 @@ window.addEventListener("load",function(event){
 });
 
 $(document).ready(function(){
-      $('.carousel').carousel();
-    });
+    $('.collapsible').collapsible();
+  });
