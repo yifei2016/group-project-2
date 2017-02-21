@@ -29,7 +29,7 @@ body{
         left: 0vw;
         border: 2px solid #b9beb8;
         background-image: url(maps.png);
-        transition: 0.5s cubic-bezier(1,0,.83,.67);
+        transition: 0.5s ease;
         background-size: 100%;
         background-repeat: no-repeat;
         z-index: 10;
