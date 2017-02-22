@@ -79,6 +79,7 @@ img {
 #map {
     height: 30vh;
     width: 70%;
+    
     /*transition: width 11s linear;*/
 }
 
@@ -110,4 +111,9 @@ footer > div{
 }
 .contact-us{
   margin:10px 0px 0px 0px;
+}
+
+#howtobutton{
+  position: fixed;
+  right:5vw;
 }
