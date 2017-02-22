@@ -15,53 +15,48 @@
 
   
   <body id="body">
-    <!-- <div>
-       <h1>Welcome</h1>
-       <p>Just search your desired location and navigate between the different options Map, Weather and Exlore to find out all you need </p>
-    </div> -->
-   <!-- Button trigger modal -->
-
-<!-- Modal -->
-
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded" style="background-color: #b4c89e;">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <img src="logomapgo.png" style="width: 3em;"> 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="about.html">About us</a>
-
-      <button type="button" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#myModal" id='howtobutton'>
-        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+    
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded" style="background-color: #b4c89e;">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            </div>
-            <div class="modal-body">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+      <img src="logomapgo.png" style="width: 3em;"> 
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class=" navbar-nav d-flex justify-content-between" style="width: 100%;">
+          <div class="d-flex justify-content-around">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="about.html">About us</a>
+          </div>
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
+            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
-
     <br><br><br>
 
     <div class="container-fluid"> 
-       <div class="row offset-md-2 col-md-10 search-nav">
-          <input type="text" class="col-md-8" id="search" autofocus>
-          <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
-       </div>
+      <div class="row offset-md-2 col-md-10 search-nav">
+        <input type="text" class="col-md-8" id="search" autofocus>
+        <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
+      </div>
     </div> 
 
     <div class="container" id="content" > 
@@ -71,8 +66,8 @@
         <div class="col-sm-3 align-self-center explore" ></div>
       </div>
     </div>
-     
-   <footer style="position:absolute; bottom:0px;">
+
+    <footer style="position:absolute; bottom:0px;">
       <div class="container-fluid">
         <div class="footer">
           <address class="text-center">
@@ -93,20 +88,12 @@
           <p class="contact-us">Click on the button above to contact us.</p>
         </div>
       </div>
-   </footer>
+    </footer>
     
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
+   
+    <script src="js/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=initMap"
     async defer></script>
-    <script src="script.js"></script> 
-    
+    <script src="js/script.js"></script> 
   </body>
 </html> 
