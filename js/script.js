@@ -1,5 +1,9 @@
 window.addEventListener("load",function(event){
     let go = document.getElementById("go");
+    // go.addEventListener('click',function(){
+    //     $('#myModal').modal('toggle');
+       
+    // });
     go.addEventListener("click",putMarkOnMap);
 });
 
