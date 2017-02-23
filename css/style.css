@@ -5,12 +5,12 @@
   margin-bottom: 0px;
   
 }*/
-
+/*
 header > img {
   height: 60px;
   width: 60px;
 }
-
+*/
 nav a:hover {
   cursor: pointer;
   color: white !important;
@@ -105,7 +105,7 @@ footer > div{
   display: flex;
   justify-content: center;
 }
-.media-icon{
+.media-icon {
   color: light-blue;
 }
 .contact-us{
