@@ -97,7 +97,7 @@ footer > div{
 }
 
 .leftarrow{
-    position:fixed;
+  /*  position:fixed;*/
     width: 10vw;
     height: 10vw;
     border: 2px solid grey;
@@ -109,7 +109,7 @@ footer > div{
 }
 
 .rightarrow{
-    position:fixed;
+    /*position:fixed;*/
     width: 10vw;
     height: 10vw;
     border: 2px solid grey;
@@ -122,12 +122,12 @@ footer > div{
 
 
 #workremoveadd{
-    position: absolute;
+   /* position: absolute;*/
     width: 70vw;
     transition: 1s ease;
     left: 14vw;
     height: 33vw;
-    top: 15vh;
+    /*top: 15vh;*/
     overflow: hidden;
     border: 2px solid white;
 }
@@ -135,8 +135,6 @@ footer > div{
 #explore{
         position: absolute;
         top: 0;
-        height:100%!important;
-        width: 100%!important;
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(books.png);
@@ -150,8 +148,8 @@ footer > div{
     #map{
         position: absolute;
         top: 0;
-        height:100%!important;
-        width: 100%!important;
+       /* height:100%!important;
+        width: 100%!important;*/
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(maps.png);
@@ -164,8 +162,8 @@ footer > div{
     #weather{
         position: absolute;
         top: 0;
-        height:100%!important;
-        width: 100%!important;
+       /* height:100%!important;
+        width: 100%!important;*/
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
