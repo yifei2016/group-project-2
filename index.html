@@ -3,8 +3,8 @@
   <head>
     <title>MapGo</title>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -16,7 +16,7 @@
   
   <body id="body">
 
-
+    <div class="container-fluid">
     <nav class="navbar  navbar-toggleable-md navbar-light bg-faded" style="background-color: #b4c89e;">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">How MapGo works</h5>
+                <h5 class="modal-title">How MapGo works</h5>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
@@ -57,20 +57,37 @@
         </div>
       </div>
     </nav>
+	</div>
     <br>
 
     <div class="container-fluid"> 
       <div class="row offset-md-2 col-md-10 search-nav">
-        <input type="text" class="col-md-8" id="search" autofocus>
-        <button type="button" class="col-md-1 btn-success" id="go">Go!</button>
+        <input type="textarea" class="col-md-8" id="locationvalue" autofocus>
+        <button type="button" class="col-md-2 btn-success" id="btn">Go!</button>
       </div>
     </div> 
 
     <div class="container" id="content" > 
       <div class="row">
-        <div class="col-sm-3 align-self-center" id="weather"></div>
-        <div class="col-sm-6" id="map"></div>
-        <div class="col-sm-3 align-self-center explore" ></div>
+         <div id='workremoveadd'>
+        
+        <div class="project1Map" id='map' href="#one!">
+          
+        </div>
+        
+        <div class="project1Weather" id='weather' href="#two!">
+          
+        </div>
+        
+        <div class="project1Explore" id='explore' href="#three!">
+          
+            
+        </div>
+        
+        </div>
+        
+        <button class='leftarrow' id='leftarrow'> </button>
+         <button class='rightarrow' id='rightarrow' </button>
       </div>
     </div>
 
