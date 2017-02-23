@@ -1,10 +1,11 @@
-window.addEventListener("load",function(event){
-    let go = document.getElementById("go");
-    // go.addEventListener('click',function(){
-    //     $('#myModal').modal('toggle');
+window.addEventListener("load", function (event) {
+  "use strict";
+  let go = document.getElementById("go");
+  // go.addEventListener('click',function(){
+  //     $('#myModal').modal('toggle');
        
-    // });
-    go.addEventListener("click",putMarkOnMap);
+  // });
+  go.addEventListener("click", putMarkOnMap);
 });
 
 const APPID = '2d3055ddb7941ccc16f48f3aaeb29121'
