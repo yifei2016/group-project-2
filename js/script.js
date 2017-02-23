@@ -95,21 +95,23 @@ function getWeather(){
         let res = JSON.parse(req.responseText);
         console.log(req.responseText)
         
-        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description}, wind speed: ${res.wind.speed}, temperature: ${res.main.temp}</p>, <img src=iconsrc>`;
+        
+        
+        // let weathericon = document.createElement('IMG');
+        let icon = res.weather[0].icon;
+        
+        // let iconsrc = 'url(http://openweathermap.org/img/w/' + iconpath;
+        let iconsrc = `http://openweathermap.org/img/w/${icon}.png`;
+        // weathericon.src=iconsrc;
+
+        let data = `<div><h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description}, 
+        wind speed: ${res.wind.speed}, temperature: ${res.main.temp} °C <img src=${iconsrc}></p></div>`;
         //let data = "<h5 style=color:green;>"+inputValue
         
-        let weathericon = document.createElement('IMG');
-        let iconpath = res.weather[0].icon + '.png)';
-        
-        let iconsrc = 'url(http://openweathermap.org/img/w/' + iconpath;
-        
-        weathericon.src=iconsrc;
-
-
-        
-       project1Weather.innerHTML = data;
-       project1Weather.style.backgroundImage='none'
-       project1Weather.appendChild(weathericon);
+        document.getElementById('weather-info').innerHTML = data;
+        project1Weather.innerHTML = data;
+        project1Weather.style.backgroundImage='none'
+        project1Weather.appendChild(weathericon);
         
       }
     };
