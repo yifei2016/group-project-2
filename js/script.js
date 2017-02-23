@@ -95,18 +95,27 @@ function getWeather(){
         let res = JSON.parse(req.responseText);
         console.log(req.responseText)
         
-        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
+        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description}, wind speed: ${res.wind.speed}, temperature: ${res.main.temp}</p>, <img src=iconsrc>`;
         //let data = "<h5 style=color:green;>"+inputValue
+        
+        let weathericon = document.createElement('IMG');
+        let iconpath = res.weather[0].icon + '.png)';
+        
+        let iconsrc = 'url(http://openweathermap.org/img/w/' + iconpath;
+        
+        weathericon.src=iconsrc;
+
+
         
        project1Weather.innerHTML = data;
        project1Weather.style.backgroundImage='none'
-
+       project1Weather.appendChild(weathericon);
         
       }
     };
     
     
-    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
+    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&units=metric&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
     //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
     req.send();
     

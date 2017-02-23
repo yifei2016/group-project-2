@@ -133,8 +133,6 @@ footer > div{
 #explore{
         position: absolute;
         top: 0;
-        height:100%!important;
-        width: 100%!important;
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(books.png);
@@ -148,8 +146,6 @@ footer > div{
     #map{
         position: absolute;
         top: 0;
-        height:100%!important;
-        width: 100%!important;
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(maps.png);
@@ -162,8 +158,6 @@ footer > div{
     #weather{
         position: absolute;
         top: 0;
-        height:100%!important;
-        width: 100%!important;
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
