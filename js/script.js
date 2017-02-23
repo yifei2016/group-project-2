@@ -4,7 +4,7 @@ window.addEventListener("load", function (event) {
   // go.addEventListener('click',function(){
   //     $('#myModal').modal('toggle');
        
-  // });
+  //});
   go.addEventListener("click", putMarkOnMap);
 });
 
