@@ -117,41 +117,46 @@ function getWeather(){
 
 
 //-------------THESE ARE THE DIVS IN WHICH TO DISPLAY THE API RESPONSES, SHOULD BE SWITCHED TO THE DIVS USED IN THE HTML & CSS TEMPLATE---//
-let project1Map = document.getElementById('map')
-
-let project1Explore = document.getElementById('explore')
-let project1Weather = document.getElementById('weather')
+let project1Map = document.getElementById('map');
+let project1Explore = document.getElementById('explore');
+let project1Weather = document.getElementById('weather');
 
 let contentarray = [];
 contentarray.push(project1Map, project1Explore, project1Weather)
 
-function resetClasses() {
-        project1Map.className = "carousel-item project1Map"
-        project1Explore.className = "carousel-item project1Explore"
-        project1Weather.className = "carousel-item project1Weather";
+
+/*
+function resetIDs() {
+        project1Map.id = 'map'
+        project1Explore.id = 'explore'
+        project1Weather.id = 'weather'
 };
 
 
 for(i=0; i<=2; i++){
+    let index = i
     contentarray[i].addEventListener('click', function(){
-        resetClasses();
-         contentarray[i].className='centered';
+        console.log(contentarray[index])
+         resetIDs();
+         contentarray[index].id = 'centered';
     });
     
     
 }
+
+*/
     
 //---------------------------------------------------------------------------------------------------------------------------//
 
-    let searchbtn = document.getElementById("btn")
+    let searchbtn = document.getElementById("btn");
     
-    let locationvalue = document.getElementById('locationvalue')
+    let locationvalue = document.getElementById('locationvalue');
     
     function runSearch(){
         getExplore();
         getPlaceOnMap();
         getWeather();
-    }
+    };
     
 locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
@@ -163,4 +168,130 @@ locationvalue.addEventListener('keydown', function(key){
        runSearch();
         
 });
+
+
+
+function Slide(){
+    
+    let rightstringarray = ['Explore', 'Weather', ''];
+    let leftstringarray = ['', 'Map', 'Explore'];
+    
+    let leftvalue = -61;
+    let leftvaluearray = [];
+    
+    for(i=0;i<contentarray.length; i++){
+    
+    leftvalue += 66
+    leftvaluearray.push(leftvalue)
+    
+    newleftvalue = leftvalue.toString() + 'vw'
+    
+    contentarray[i].className='col-xs-4'
+    contentarray[i].style.position = 'absolute'
+    contentarray[i].style.top = '4vh'
+    contentarray[i].style.outline='3.5px solid #b9beb8'
+    contentarray[i].style.height = '85%'
+    contentarray[i].style.width = '60vw'
+    contentarray[i].style.padding = '0 0'
+    contentarray[i].style.backgroundSize = "50%"
+    contentarray[i].style.opacity='1'
+    contentarray[i].style.left=newleftvalue
+    contentarray[i].style.transition='1.5s ease'
+    contentarray[i].style.float='left'
+    contentarray[i].style.border='2px solid white'
+    };
+    
+        let leftarrow = document.getElementById('leftarrow')
+    
+        let rightarrow = document.getElementById('rightarrow')
+        
+        let textclockwise = document.getElementsByClassName('rotateclockwise')[0]
+        let textcounterclockwise = document.getElementsByClassName('rotatecounterclockwise')[0]
+              function arrowInnerHTML(){
+                  
+        textcounterclockwise.innerHTML = leftstringarray[rightclicks]
+        textclockwise.innerHTML = rightstringarray[rightclicks]
+        
+            }
+       
+        let leftclicks = 0;
+        let rightclicks = 0;
+        
+        leftarrow.addEventListener('click', function(){
+        
+            
+      
+             
+        var leftvalue1 = 0
+        const sixtysix=66;
+        
+        if(rightclicks>0 && leftclicks<4){
+            
+            leftclicks++
+            rightclicks--
+            
+            for(i=0;i<contentarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]+=sixtysix
+
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                contentarray[i].style.left=newleftvalue1
+                };
+                
+
+            };
+        };
+            console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+            arrowInnerHTML();
+    });
+    
+     
+
+    
+    rightarrow.addEventListener('click', function(){
+        
+         var leftvalue1 = 0
+               
+         if(leftclicks<=2 && rightclicks<2){
+         rightclicks++
+         
+         if(leftclicks !== 0){
+         leftclicks-- 
+         };
+         if(leftclicks<=3 && rightclicks<=2){
+            for(i=0;i<contentarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]-=66
+
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                contentarray[i].style.left=newleftvalue1
+                };
+
+
+                
+
+            };
+         };
+        };
+   
+
+        
+        console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+        arrowInnerHTML();
+        
+    });
+        
+       
+
+}
+    
+    Slide()
+
+
 
