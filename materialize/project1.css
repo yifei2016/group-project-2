@@ -3,81 +3,102 @@ body{
     background-size: 100%;
     /*background-repeat: no-repeat;*/
     font-family: 'Raleway', sans-serif;
-    padding: 20vh 31vw;
+
 }
 
-    body .project1Explore{
+	
+
+
+::-webkit-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+    #explore{
         position: absolute;
-        top: 100vh;
-        height:55vh;!important
-        width: 23vw;!important
-        color: white;
-        font-size: 1em;
+        top: 0;
+
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
-        background-size: 100%;
         background-image: url(books.png);
+        background-size: 50%;
         background-repeat: no-repeat;
-        left: -51vh;
-       /*overflow:scroll;*/
-        
+        left: 0;
+        color: black;
+       overflow-y:scroll; 
 }
 
-    body .project1Map{
+    #map{
         position: absolute;
-        top: 100vh;
-        left: 0vw;
+        top: 0;
+
         border: 2px solid #b9beb8;
-        background-image: url(maps.png);
         transition: 0.5s ease;
-        background-size: 100%;
+        background-image: url(maps.png);
+        background-size: 50%;
         background-repeat: no-repeat;
-        z-index: 10;
+        left: 0;
+        color: black;
 }
 
-#map, #weather, #explore{
-    height:25vw;!important;
-        width: 25vw;!important;
-    text-decoration: none;
-    color: white;
-}
-
-.centered{
-    width: 50vw;
-    height: 25vw;
-}
-
-.outoffocus{
-    
-    width: 15vw;
-    height: 25vw;
-    
-}
-
-#idcarousel{
-    position: absolute;
-    width: 80vw;
-    left: 10vw;
-}
-
-    body .project1Weather{
+    #weather{
         position: absolute;
-        top: 100vh;
-        height:55vh;!important
-        width: 21vw;!important
+        top: 0;
+
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
-        background-size: 100%;
+        background-size: 50%;
         background-repeat: no-repeat;
-        left: 53vw;
+        left: 0;
         color: black;
         
 }
 
-.textarea{
-        height: 60px;
-        width:40vw;
+/*
+#map, #weather, #explore{
+    height: 15vw;!important;
+    width: 15vw;!important;
+    text-decoration: none;
+    color: white;
+}
+
+#centered{
+    height:15vw;!important;
+    width: 15vw;!important;
+    text-decoration: none;
+    color: pink;
+}
+*/
+
+
+
+/*
+#idcarousel{
+    position: absolute;
+    width: 80vw;
+    left: 10vw;
+    top: 15vw;
+}
+*/
+
+
+#locationvalue{
+    position: absolute;
+    top: 0;
+    height: 4vw;
+    width:30vw;
     font-size: 2em;
     font-weight: 0.5;
     padding: 10px;
@@ -85,12 +106,14 @@ body{
     background-color: #e0e0e0;
     color: #635822;
     transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.8);
+    left: 25vw;
 }
 
 #btn{
     position:absolute;
     top:0vh;
-    height: 86px;
+    height: 5vw;;
     width:10vw;
     font-size: 2em;
     background-color: #e0e0e0;
@@ -98,20 +121,70 @@ body{
     transition: 1.5s ease;
     font-family: 'Raleway', sans-serif;
     margin-left:2px;
+    left: 57vw;
 }
 
-#btn:hover, #btn:active, .textarea:hover, .textarea:active, .textarea:focus{
+#btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
     
     color: #e0e0e0;
     background-color: #635822;
     
 }
 
-.maindiv{
-    position:absolute;
-    top: 10vh;
-    left: 25vw;
-    width: 650px;
-    height: 486px;
-    //overflow: hidden;
+
+.leftarrow{
+    position:fixed;
+    width: 5vw;
+    height: 28vw;
+    border: 2px solid grey;
+    background-color: blue;
+    top: 9.5vw;
+    left: 5vw;
+    color: white;
+    font-size: 2em;
+    transition: 0.8s ease;
+    text-align: center;
+    }
+
+.rightarrow{
+    position:fixed;
+    width: 5vw;
+    height: 28vw;
+    border: 2px solid grey;
+    background-color: blue;
+    top: 9.5vw;
+    right: 5vw;
+    color: white;
+    font-size: 2em;
+    transition: 0.8s ease;
+    text-align: center;  
+}
+
+    .rotateclockwise{
+        display: block;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+        transition: 0.8s ease;
+    }
+
+.rotatecounterclockwise{
+    display: block;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+}
+
+
+#workremoveadd{
+    position: absolute;
+    width: 70vw;
+    transition: 1s ease;
+    left: 14vw;
+    height: 33vw;
+    top: 15vh;
+    overflow: hidden;
+    border: 0px solid white;
 }

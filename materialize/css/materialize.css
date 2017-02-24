@@ -7773,7 +7773,7 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 68px;
   z-index: 1;
 }
 
@@ -7818,7 +7818,7 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: center;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 68px;
   margin: 0;
 }
 
@@ -7836,6 +7836,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .carousel .indicators .indicator-item.active {
   background-color: #fff;
+    color: pink;
 }
 
 /* ==========================================================================
