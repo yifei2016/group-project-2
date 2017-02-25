@@ -1,0 +1,71 @@
+body {
+    background-image: url(background.png);
+    background-size: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*placeholder for now, insert sebbes nav*/
+nav {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  align-items: center;
+  height: 75px;
+  background-color: #9EA19E;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 70px 150px;
+  font-size: 13pt;
+}
+
+.intro {
+  font-size: 2em;
+  color: #2E4430
+}
+
+.item {
+  flex: auto;
+}
+
+.us {
+  display: flex;
+  align-content: space-around;
+  border: 1px solid grey;
+  max-height: 180px;
+  min-height: 150px;
+  margin: 10px 0px;
+}
+
+.one, .three, .five {
+  background-color: lightgray;
+}
+
+img {
+  height: 150px;
+  min-width: 150px;
+  display: inline-block;
+  margin: 10px;
+  border: 4px dashed #2E4430;
+}
+
+.us p {
+  overflow: hidden;
+  margin: 10px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  align-items: center;
+  height: 75px;
+  background-color: #9EA19E;
+  color: #2E4430;
+  justify-content: center;
+  align-content: space-around;
+  align-self: flex-end;
+}
