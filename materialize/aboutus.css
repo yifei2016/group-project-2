@@ -15,7 +15,27 @@ nav {
   height: 75px;
   /*background-color: #9EA19E;*/
 }
+.center{
+  display: flex;
+  justify-content: center;
 
+}
+#ask{
+  border:none;
+  padding:0;
+  background: none;
+}
+
+#answer{
+  border:1px solid black;
+  position:absolute;
+  top:-500px;
+  text-align: center;
+  width: 50%;
+  margin:0 auto;
+  border-radius:5px;
+
+}
 .container {
   display: flex;
   flex-direction: column;
