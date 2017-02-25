@@ -5,6 +5,8 @@
   margin-bottom: 0px;
   
 }*/
+
+
 nav a:hover {
   cursor: pointer;
   color: white !important;
@@ -28,7 +30,8 @@ img {
 }
 
 .search-nav {
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 
@@ -117,9 +120,8 @@ footer > div{
     color: white;
     font-size: 2em;
 }
-
-
-#workremoveadd{
+/*pre vers*/
+/*#workremoveadd{
     position: absolute;
     width: 70vw;
     transition: 1s ease;
@@ -140,7 +142,7 @@ footer > div{
         background-repeat: no-repeat;
         left: 0;
         color: black;
-        overflow:scroll; 
+        overflow:scroll;
 }
 
     #map{
@@ -153,6 +155,7 @@ footer > div{
         background-repeat: no-repeat;
         left: 0;
         color: black;
+        
 }
 
     #weather{
@@ -162,6 +165,59 @@ footer > div{
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
         background-size: 100%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        
+}*/
+
+/*niklas test*/
+#workremoveadd{
+    position: absolute;
+    width: 70vw;
+    transition: 1s ease;
+    left: 14vw;
+    height: 33vw;
+    top: 15vh;
+    overflow: hidden;
+    border: 0px solid white;
+}
+
+#explore{
+        position: absolute;
+        top: 0;
+        width: 6vw;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(books.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow-y:scroll; 
+}
+
+    #map{
+        position: absolute;
+        top: 0;
+        width: 60vw;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(maps.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+}
+
+    #weather{ 
+        position: absolute;
+        top: 0;
+        width: 60vw;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(Weather-PNG-Pic.png);
+        background-size: 50%;
         background-repeat: no-repeat;
         left: 0;
         color: black;
