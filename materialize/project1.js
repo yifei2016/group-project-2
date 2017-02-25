@@ -4,6 +4,16 @@ window.onload=function(){
     }, 100)
 };
 
+let inputDiv = document.getElementsByClassName('inputdiv')[0]
+let removeadd = document.getElementById('removeadd')
+
+
+
+function divsPositioned(){
+    removeadd.style.top='15vh';
+    inputDiv.style.top='5vh';
+}
+
 
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
     function getExplore(){
@@ -161,12 +171,13 @@ for(i=0; i<=2; i++){
 locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
       runSearch();
+        divsPositioned();
        }
 });
     
     searchbtn.addEventListener('click', function(){
        runSearch();
-        
+        divsPositioned();
 });
 
 
@@ -189,16 +200,16 @@ function Slide(){
     contentarray[i].className='col-xs-4'
     contentarray[i].style.position = 'absolute'
     contentarray[i].style.top = '4vh'
-    contentarray[i].style.outline='3.5px solid #b9beb8'
+    //contentarray[i].style.outline='3.5px solid #b9beb8'
     contentarray[i].style.height = '85%'
     contentarray[i].style.width = '60vw'
     contentarray[i].style.padding = '0 0'
-    contentarray[i].style.backgroundSize = "50%"
+    contentarray[i].style.backgroundSize = "100%"
     contentarray[i].style.opacity='1'
     contentarray[i].style.left=newleftvalue
     contentarray[i].style.transition='1.5s ease'
     contentarray[i].style.float='left'
-    contentarray[i].style.border='2px solid white'
+    //contentarray[i].style.border='2px solid white'
     };
     
         let leftarrow = document.getElementById('leftarrow')
