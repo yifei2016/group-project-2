@@ -22,27 +22,27 @@
      <!--The navbar--------------------------->
 	 
 	<nav style="background-color: rgba(46, 68, 48, 0.3);">
-    <div class="nav-wrapper">
-      <a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;"> </a>
+    <div class="nav-wrapper row">
+      <div class="col s12"><a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;"> </a></div>
       <ul id="nav-mobile" class="right">
-        <li><a href="carouseltest.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#">How it Works</a></li> <!--make modal here------>
+        <div class="col m3"><li><a href="carouseltest.html">Home</a></li></div>
+        <div class="col m3"><li><a href="about.html">About</a></li></div>
+        <div class="col m6"><li><a href="#">How it Works</a></li></div> <!--add modal here------>
       </ul>
     </div>
   </nav>
   
      <!--Slut på nav----------------------------->
 	 
-    <div class="inputdiv">
-        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus>
+    <div class="inputdiv row">
+        <div class="col m6"><input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus><div>
         
-        <input id="btn" type="button" value="Search"/>
+        <div class="col m6"><input id="btn" type="button" value="Search"/></div>
     </div>
      
      
 
-        <div id='removeadd'>
+        <div id='removeadd' class="row">
         
         <div class="project1Map" id='map'>
           
