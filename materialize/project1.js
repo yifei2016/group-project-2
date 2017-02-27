@@ -6,12 +6,27 @@ window.onload=function(){
 
 let inputDiv = document.getElementsByClassName('inputdiv')[0]
 let removeadd = document.getElementById('removeadd')
+let leftarrow = document.getElementById('leftarrow')
+let rightarrow = document.getElementById('rightarrow')
 
 
 
 function divsPositioned(){
     removeadd.style.top='15vh';
     inputDiv.style.top='5vh';
+    rightarrow.style.top='4vh';
+    leftarrow.style.top='4vh';
+    rightarrow.style.right='0vw';
+    leftarrow.style.left='0vw';
+    
+    for(i=0;i>0&&i<contentarray.length;i++){
+        contentarray[i].style.display='none';
+    };
+    
+    setTimeout(function(){
+        removeadd.style.overflow= 'hidden';
+    }, 1500)
+    
 }
 
 
@@ -21,8 +36,9 @@ function divsPositioned(){
     
     let req = new XMLHttpRequest
     
-        let url = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";
-    
+        "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";
+        
+        let url = "https://en.wikipedia.org/w/api.php?format=xml&action=query&exlimit=max&explaintext&titles=" + locationvalue.value + "&prop=revisions&rvprop=content&origin=*"
         req.open('GET', url);
     
 req.onreadystatechange = function(event) {
@@ -30,11 +46,13 @@ req.onreadystatechange = function(event) {
 	if( req.readyState == 4 )
 console.log('- success!');
 	console.log("-----");
-    let myPlaceParsed = JSON.parse(req.responseText)
+    let myPlaceParsed = req.responseText
   let displayedtext= '';
     
+    console.log(myPlaceParsed)
+    
         
-       displayedtext+= myPlaceParsed[2] + '<br>'+'<br>'
+       displayedtext+= myPlaceParsed[3]
 
     //console.log(myPlaceParsed);
     project1Explore.innerHTML = displayedtext
@@ -168,17 +186,7 @@ for(i=0; i<=2; i++){
         getWeather();
     };
     
-locationvalue.addEventListener('keydown', function(key){
-    if(event.keyCode==13){
-      runSearch();
-        divsPositioned();
-       }
-});
-    
-    searchbtn.addEventListener('click', function(){
-       runSearch();
-        divsPositioned();
-});
+
 
 
 
@@ -186,6 +194,7 @@ function Slide(){
     
     let rightstringarray = ['Explore', 'Weather', ''];
     let leftstringarray = ['', 'Map', 'Explore'];
+
     
     let leftvalue = -61;
     let leftvaluearray = [];
@@ -203,7 +212,6 @@ function Slide(){
     //contentarray[i].style.outline='3.5px solid #b9beb8'
     contentarray[i].style.height = '85%'
     contentarray[i].style.width = '60vw'
-    contentarray[i].style.padding = '0 0'
     contentarray[i].style.backgroundSize = "100%"
     contentarray[i].style.opacity='1'
     contentarray[i].style.left=newleftvalue
@@ -212,16 +220,17 @@ function Slide(){
     //contentarray[i].style.border='2px solid white'
     };
     
-        let leftarrow = document.getElementById('leftarrow')
-    
-        let rightarrow = document.getElementById('rightarrow')
+
         
         let textclockwise = document.getElementsByClassName('rotateclockwise')[0]
         let textcounterclockwise = document.getElementsByClassName('rotatecounterclockwise')[0]
+
               function arrowInnerHTML(){
                   
         textcounterclockwise.innerHTML = leftstringarray[rightclicks]
         textclockwise.innerHTML = rightstringarray[rightclicks]
+
+
         
             }
        
@@ -303,6 +312,18 @@ function Slide(){
 }
     
     Slide()
+    
+    locationvalue.addEventListener('keydown', function(key){
+    if(event.keyCode==13){
+      runSearch();
+        divsPositioned();
+       }
+});
+    
+    searchbtn.addEventListener('click', function(){
+       runSearch();
+        divsPositioned();
+});
 
 
 
