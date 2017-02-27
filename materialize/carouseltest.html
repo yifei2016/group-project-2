@@ -1,5 +1,5 @@
   <!DOCTYPE html>
-  <html>
+  <html id="html">
     <head>
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!--Import Google Icon Font-->
@@ -21,24 +21,26 @@
 	
      <!--The navbar--------------------------->
 	 
-	<nav style="background-color: rgba(46, 68, 48, 0.3);">
-    <div class="nav-wrapper row">
-      <div class="col s12"><a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;"> </a></div>
+	<nav style="background-color: rgba(46, 68, 48, 0.3);" id="header-nav">
+    <div class="nav-wrapper" >
+      <div id="justify-logo"><a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.2em;"> </a></div>
       <ul id="nav-mobile" class="right">
-        <div class="col m3"><li><a href="carouseltest.html">Home</a></li></div>
-        <div class="col m3"><li><a href="about.html">About</a></li></div>
-        <div class="col m6"><li><a href="#">How it Works</a></li></div> <!--add modal here------>
+        <li><a href="carouseltest.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">How it Works</a></li> <!--add modal here------>
       </ul>
     </div>
   </nav>
   
      <!--Slut på nav----------------------------->
 	 
-    <div class="inputdiv row">
-        <div class="col m6"><input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus><div>
-        
-        <div class="col m6"><input id="btn" type="button" value="Search"/></div>
-    </div>
+    <div class="inputdiv">
+	
+        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus>
+		
+        <input id="btn" type="button" value="Search"/>
+		</div>
+    
      
      
 
