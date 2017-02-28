@@ -1,9 +1,20 @@
 
+<<<<<<< HEAD
 
 .container-fluid {
 	background-color: #b4c89e;
 }
 
+=======
+/*#body {
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(75deg, #8b8e83, #d0d1cd);
+  margin-bottom: 0px;
+  
+}*/
+
+>>>>>>> sebbe
 
 
 nav a:hover {
@@ -23,10 +34,13 @@ nav a:hover {
 }
 
 
+<<<<<<< HEAD
 .row {
   margin-top: 60px;
   
 
+=======
+>>>>>>> sebbe
 }
 
 footer {
@@ -81,12 +95,16 @@ footer > div{
     color: white;
     font-size: 2em;
 }
+<<<<<<< HEAD
 
 
 
 #workremoveadd{
    /* position: absolute;*/
 
+=======
+
+>>>>>>> sebbe
     width: 70vw;
     transition: 1s ease;
     left: 14vw;
@@ -108,8 +126,11 @@ footer > div{
         left: 0;
         color: black;
 
+<<<<<<< HEAD
         overflow:scroll; 
 
+=======
+>>>>>>> sebbe
 }
 
     #map{
@@ -127,9 +148,12 @@ footer > div{
 
     #weather{
         position: absolute;
+<<<<<<< HEAD
 
         top: 0;      
 
+=======
+>>>>>>> sebbe
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
