@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 
-.container-fluid {
-	background-color: #b4c89e;
-}
-=======
 /*#body {
   overflow: hidden;
   height: 100vh;
@@ -11,7 +6,7 @@
   margin-bottom: 0px;
   
 }*/
->>>>>>> origin/louice
+
 
 
 nav a:hover {
@@ -30,15 +25,7 @@ nav a:hover {
   outline: none;
 }
 
-<<<<<<< HEAD
-.row {
-  margin-top: 60px;
-  
-=======
-.search-nav {
-  margin-top: 30px;
-  margin-bottom: 50px;
->>>>>>> origin/louice
+
 }
 
 footer {
@@ -71,7 +58,7 @@ footer > div{
 }
 
 .leftarrow{
-    position:fixed;
+  /*  position:fixed;*/
     width: 10vw;
     height: 10vw;
     border: 2px solid grey;
@@ -83,7 +70,7 @@ footer > div{
 }
 
 .rightarrow{
-    position:fixed;
+    /*position:fixed;*/
     width: 10vw;
     height: 10vw;
     border: 2px solid grey;
@@ -93,9 +80,7 @@ footer > div{
     color: white;
     font-size: 2em;
 }
-/*pre vers*/
-/*#workremoveadd{
-    position: absolute;
+
     width: 70vw;
     transition: 1s ease;
     left: 14vw;
@@ -116,11 +101,7 @@ footer > div{
         background-repeat: no-repeat;
         left: 0;
         color: black;
-<<<<<<< HEAD
-        overflow:scroll; 
-=======
-        overflow:scroll;
->>>>>>> origin/louice
+
 }
 
     #map{
@@ -138,11 +119,6 @@ footer > div{
 
     #weather{
         position: absolute;
-<<<<<<< HEAD
-        top: 0;      
-=======
-        top: 0;
->>>>>>> origin/louice
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
