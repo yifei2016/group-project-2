@@ -3,7 +3,18 @@ body{
     background-size: 100%;
     /*background-repeat: no-repeat;*/
     font-family: 'Raleway', sans-serif;
+    /*display: flex;
+	min-height: 100vh;
+	flex-direction: column;*/
+}
 
+html, #body {
+	margin: 0;
+	padding: 0;
+}
+
+#header-nav {
+	width:105vw;
 }
 
 ::-webkit-scrollbar
@@ -110,7 +121,6 @@ body{
 }
 
 #btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
-    
     color: #e0e0e0;
     background-color: rgba(46, 68, 48, 1);
     
@@ -172,8 +182,114 @@ body{
     top: 133vw;
     overflow: hidden;
 }
-/*
-@media {
-  screen and portrait
-  
+
+
+nav div img {
+	margin-top: 3px;
 }
+
+/*-----------Media Queries-----------*/
+
+
+@media screen and (max-width: 700px) {
+	.inputdiv {
+    position: fixed;
+    top: 30vh;
+    height: 9vh;
+    width: 40vw;
+    left: 25vw;
+    transition: 1.5s ease;
+	}
+	#header-nav {
+	height: 64px;
+	line-height: 64px;
+	}
+	#btn {
+	position:absolute;
+    top:0vh;
+    height: 100%;
+    width: 30%;
+    font-size: 2vw;
+    /*background-color: #e0e0e0;*/
+    /*color: #635822;
+    transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;*/
+	}
+	#locationvalue {
+	position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+	}
+	#removeadd {
+	top: 140vh;
+	}
+	
+}
+
+@media screen and (min-width:701px) and (max-width:1024px) {
+	.inputdiv {
+	position: fixed;
+    top: 30vh;
+    height: 10vh;
+    width: 35vw;
+    left: 30vw;
+    transition: 1.5s ease;
+	}
+	#btn {
+	position:absolute;
+    top:0vh;
+    height: 100%;
+    width: 35%;
+    font-size: 1.8vw;
+    background-color: #e0e0e0;
+    /*color: #635822;*/
+    /*transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;*/
+	}
+	#locationvalue {
+	position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+	}
+	#removeadd {
+	top: 140vh;
+	}
+	
+}
+/*@media screen and (min-width:1025px) {
+	.inputdiv {
+	top: 30vh;
+	width: 35vw;
+	}
+	#btn {
+	/*width: 25%;
+	left: 75%;
+	}
+	
+	
+}
+*/

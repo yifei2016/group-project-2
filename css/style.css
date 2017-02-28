@@ -1,10 +1,9 @@
-/*#body {
-  overflow: hidden;
-  height: 100vh;
-  background: linear-gradient(75deg, #8b8e83, #d0d1cd);
-  margin-bottom: 0px;
-  
-}*/
+
+
+.container-fluid {
+	background-color: #b4c89e;
+}
+
 
 
 nav a:hover {
@@ -12,13 +11,7 @@ nav a:hover {
   color: white !important;
 }
 
-img {
-  background-size: cover;
-  overflow: hidden;
-}
-#content{
-  margin-top: 30px;
-}
+
 #btn {
   display: inline-block;
   height: 60px;
@@ -29,44 +22,12 @@ img {
   outline: none;
 }
 
-.search-nav {
-  margin-top: 30px;
-  margin-bottom: 50px;
+
+.row {
+  margin-top: 60px;
+  
+
 }
-
-
-/*.nav-btn {
-  height: 30vh;
-    width: 70%;
-  margin-top: 150px;
-  color: rgb(100, 100, 100);
-  text-align: center;
-  padding: 85px;
-}*/
-
-/*Explore button*/
-/*.row > nav:first-child {
-  float: right;
-  background-color: rgba(225, 229, 88, 0.5);
-}*/
-.row > nav:first-child:hover {
-  filter: brightness(1.35);
-  color: white;
-  font-size: 1.2em;
-}
-
-/*Weather button*/
-.row > nav:nth-child(3) {
-  background-color: rgba(94, 149, 181, 0.5);
-  margin-left: 14px;
-}
-.row > nav:nth-child(3):hover {
-  filter: brightness(1.35);
-  color: white;
-  font-size: 1.2em;
-}
-
-
 
 footer {
   padding:20px 0px 0px 0px;
@@ -98,7 +59,7 @@ footer > div{
 }
 
 .leftarrow{
-    position:fixed;
+  /*  position:fixed;*/
     width: 10vw;
     height: 10vw;
     border: 2px solid grey;
@@ -110,7 +71,7 @@ footer > div{
 }
 
 .rightarrow{
-    position:fixed;
+    /*position:fixed;*/
     width: 10vw;
     height: 10vw;
     border: 2px solid grey;
@@ -120,16 +81,20 @@ footer > div{
     color: white;
     font-size: 2em;
 }
-/*pre vers*/
-/*#workremoveadd{
-    position: absolute;
+
+
+
+#workremoveadd{
+   /* position: absolute;*/
+
     width: 70vw;
     transition: 1s ease;
     left: 14vw;
     height: 33vw;
-    top: 15vh;
+    top: 15vw;
     overflow: hidden;
     border: 2px solid white;
+	
 }
  
 #explore{
@@ -142,7 +107,9 @@ footer > div{
         background-repeat: no-repeat;
         left: 0;
         color: black;
-        overflow:scroll;
+
+        overflow:scroll; 
+
 }
 
     #map{
@@ -160,7 +127,9 @@ footer > div{
 
     #weather{
         position: absolute;
-        top: 0;
+
+        top: 0;      
+
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
