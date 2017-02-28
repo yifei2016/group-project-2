@@ -4,20 +4,24 @@ window.onload=function(){
     }, 100)
 };
 
+let locationvalue = document.getElementById('locationvalue');
 let inputDiv = document.getElementsByClassName('inputdiv')[0]
 let removeadd = document.getElementById('removeadd')
 let leftarrow = document.getElementById('leftarrow')
 let rightarrow = document.getElementById('rightarrow')
+let favourite = document.getElementById('favourite')
+let favourites = document.getElementById('favourites')
+
 
 
 
 function divsPositioned(){
-    removeadd.style.top='15vh';
-    inputDiv.style.top='5vh';
-    rightarrow.style.top='4vh';
-    leftarrow.style.top='4vh';
-    rightarrow.style.right='0vw';
-    leftarrow.style.left='0vw';
+    removeadd.className='removeaddpositioned'
+    inputDiv.className='inputdivpositioned inputdiv';
+    rightarrow.className='rightarrow rightarrowpositioned'
+    leftarrow.className='leftarrow leftarrowpositioned'
+    removeadd.id='removeaddpositioned'
+    favourite.style.right='25vw';
     
     for(i=0;i>0&&i<contentarray.length;i++){
         contentarray[i].style.display='none';
@@ -29,35 +33,99 @@ function divsPositioned(){
     
 }
 
+//-----------------------FUNCTION FAVOURITE---------------------------
+
+function addFavourite (){
+    
+
+
+let favtop=0;
+let favouritesdivarray=[];
+let favouritevalues = [];
+let idnumber=0;
+favourite.addEventListener('click', function(){
+favourites.id='favouritesdisplayed';
+
+
+    idnumber++
+    
+    let div = document.createElement('DIV');
+    div.className='favouritesdiv';
+    div.innerHTML=locationvalue.value;
+    div.style.top=favtop + 'vh';
+    div.id=locationvalue.value;
+    favouritesdivarray.push(div);
+    favouritevalues.push(locationvalue.value);
+    favtop+=8;
+    favourites.appendChild(div);
+        console.log('favouritevalues och favouritesdivarray: ' + favouritevalues, favouritesdivarray);
+})
+
+
+favourites.addEventListener("click", doSomething, false);
+
+    
+    
+
+function doSomething(e) {
+    if (e.target !== e.currentTarget) {
+        let favsearch = e.target.id;
+        let searchstring = favsearch;
+        console.log('Searchstring: ' + searchstring)
+        runSearch(searchstring);
+    }
+    e.stopPropagation();
+}
+
+for(i=0;i<favouritesdivarray.length;i++){
+    
+let arrayindex = i;
+favouritesdivarray[i].addEventListener('click', function(){
+
+    });
+
+
+};
+    
+    }
+
 
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
-    function getExplore(){
+    function getExplore(place){
         
     
-    let req = new XMLHttpRequest
+    let req = new XMLHttpRequest;
     
-        "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";
+        /*"http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";*/
+    
+   /*https://en.wikipedia.org/w/api.php?format=json&action=query&exlimit=max&explaintext&titles=Albert%20Einstein&prop=revisions&rvprop=content&origin=*            */
         
-        let url = "https://en.wikipedia.org/w/api.php?format=xml&action=query&exlimit=max&explaintext&titles=" + locationvalue.value + "&prop=revisions&rvprop=content&origin=*"
+        let url = "https://en.wikipedia.org/w/api.php?format=json&action=query&exlimit=max&explaintext&titles=" + place + "&prop=revisions&rvprop=content&origin=*"
         req.open('GET', url);
     
 req.onreadystatechange = function(event) {
 
-	if( req.readyState == 4 )
-console.log('- success!');
-	console.log("-----");
-    let myPlaceParsed = req.responseText
+	if( req.readyState == 4 ){
+
+
+    let myPlaceParsed = JSON.parse(req.responseText)//.getElementsByTagName('rev')[0]
   let displayedtext= '';
     
     console.log(myPlaceParsed)
     
+    for( let x in myPlaceParsed.query.pages ) {
+        console.log(x)
+        displayedtext = myPlaceParsed.query.pages[x].revisions[0]['*']
+    }
         
-       displayedtext+= myPlaceParsed[3]
+       
 
     //console.log(myPlaceParsed);
     project1Explore.innerHTML = displayedtext
     //project1Explore.style.top='86px';
     project1Explore.style.backgroundImage='none'
+    
+    }
 
 };
 
@@ -70,18 +138,65 @@ req.send();
 
 }
 
+//-----------------------------------FUNCTION GET PHOTOS--------------------------------
+
+
+
+    function getPhotos(place){
+
+    let req = new XMLHttpRequest;
+    
+        /*"http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";*/
+    
+   /*https://en.wikipedia.org/w/api.php?format=json&action=query&exlimit=max&explaintext&titles=Albert%20Einstein&prop=revisions&rvprop=content&origin=*            */
+        
+        let url = "GET https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase=" + place;
+        req.open('GET', url);
+    
+req.onreadystatechange = function(event) {
+
+	if( req.readyState == 4 ){
+
+
+    let myPlaceParsed = JSON.parse(req.responseText)//.getElementsByTagName('rev')[0];
+  let displayedtext= '';
+    
+    console.log(myPlaceParsed)
+    
+    /*for( let x in myPlaceParsed.query.pages ) {
+        console.log(x)
+        displayedtext = myPlaceParsed.query.pages[x].revisions[0]['*']
+    }*/
+        
+
+    
+    }
+
+};
+
+req.send();
+    
+  
+
+}
+
+
+
 //-----------------------------------------------------------FUNCTION GET PLACE ON MAP----------------------------------------------------------
-function getPlaceOnMap(){
-    console.log(locationvalue.value + 'här')
+
+
+
+function getPlaceOnMap(place){
+    console.log(place + 'här')
         let lat;
         let lng;
           var geocoder =  new google.maps.Geocoder();
-    geocoder.geocode( { 'address': locationvalue.value}, function(results, status) {
+    geocoder.geocode( { 'address': place}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
              let lat = results[0].geometry.location.lat() 
              let lng = results[0].geometry.location.lng();
              
-              console.log('Detta är latitude och longitud: ' + lat, lng)
+              //console.log('Detta är latitude och longitud: ' + lat, lng)
               
                                      function myMap() {
     var mapOptions = {
@@ -95,16 +210,13 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
           position: {lat: lat, lng: lng},
           map: map
         });
-      }
+      };
         
-        myMap()
-        //project1Map.style.top='86px'
-        project1Map.style.backgroundImage='none'
+        myMap();
+        project1Map.style.backgroundImage='none';
           }
         
-        if(location.value.length===0){
-           alert("Please type a location.")
-        }
+ 
 
         else {
             alert("Something went wrong " + status);
@@ -116,14 +228,14 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
            
 
 //-----------------------------------------------------FUNCTION GET WEATHER--------------------------------------------------------------------------
-function getWeather(){
+function getWeather(place){
     let req = new XMLHttpRequest();
     req.onreadystatechange = function(event) {
       if( req.readyState == 4 ){
         let res = JSON.parse(req.responseText);
-        console.log(req.responseText)
+        //console.log(req.responseText)
         
-        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
+        let data = `<h5 style=color:green;>${place} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
         //let data = "<h5 style=color:green;>"+inputValue
         
        project1Weather.innerHTML = data;
@@ -134,7 +246,7 @@ function getWeather(){
     };
     
     
-    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
+    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${place}&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
     //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
     req.send();
     
@@ -148,42 +260,23 @@ function getWeather(){
 let project1Map = document.getElementById('map');
 let project1Explore = document.getElementById('explore');
 let project1Weather = document.getElementById('weather');
+let project1Photos = document.getElementById('photos');
 
 let contentarray = [];
-contentarray.push(project1Map, project1Explore, project1Weather)
+contentarray.push(project1Map, project1Explore, project1Weather, project1Photos);
 
-
-/*
-function resetIDs() {
-        project1Map.id = 'map'
-        project1Explore.id = 'explore'
-        project1Weather.id = 'weather'
-};
-
-
-for(i=0; i<=2; i++){
-    let index = i
-    contentarray[i].addEventListener('click', function(){
-        console.log(contentarray[index])
-         resetIDs();
-         contentarray[index].id = 'centered';
-    });
-    
-    
-}
-
-*/
     
 //---------------------------------------------------------------------------------------------------------------------------//
 
     let searchbtn = document.getElementById("btn");
     
-    let locationvalue = document.getElementById('locationvalue');
     
-    function runSearch(){
-        getExplore();
-        getPlaceOnMap();
-        getWeather();
+    
+    function runSearch(searchstring1){
+        getExplore(searchstring1);
+        getPlaceOnMap(searchstring1);
+        getWeather(searchstring1);
+        getPhotos(searchstring1);
     };
     
 
@@ -194,7 +287,8 @@ function Slide(){
     
     let rightstringarray = ['Explore', 'Weather', ''];
     let leftstringarray = ['', 'Map', 'Explore'];
-
+    let rightbackgroundarray = ['url(exploreright.png)', 'url(weatherright.png)', 'url(weatherright.png)']
+    let leftbackgroundarray = ['url(exploreright.png)', 'url(mapbackground.png)', 'url(exploreleft.png)']
     
     let leftvalue = -61;
     let leftvaluearray = [];
@@ -222,13 +316,15 @@ function Slide(){
     
 
         
-        let textclockwise = document.getElementsByClassName('rotateclockwise')[0]
-        let textcounterclockwise = document.getElementsByClassName('rotatecounterclockwise')[0]
+        let textclockwise = document.getElementsByClassName('rotateclockwise')[0];
+        let textcounterclockwise = document.getElementsByClassName('rotatecounterclockwise')[0];
 
               function arrowInnerHTML(){
                   
-        textcounterclockwise.innerHTML = leftstringarray[rightclicks]
-        textclockwise.innerHTML = rightstringarray[rightclicks]
+        //textcounterclockwise.innerHTML = leftstringarray[rightclicks];
+        //textclockwise.innerHTML = rightstringarray[rightclicks];
+        leftarrow.style.backgroundImage = leftbackgroundarray[rightclicks];
+        rightarrow.style.backgroundImage = rightbackgroundarray[rightclicks];
 
 
         
@@ -245,7 +341,7 @@ function Slide(){
         var leftvalue1 = 0
         const sixtysix=66;
         
-        if(rightclicks>0 && leftclicks<4){
+        if(rightclicks>0 && leftclicks<5){
             
             leftclicks++
             rightclicks--
@@ -275,13 +371,13 @@ function Slide(){
         
          var leftvalue1 = 0
                
-         if(leftclicks<=2 && rightclicks<2){
+         if(leftclicks<=3 && rightclicks<3){
          rightclicks++
          
          if(leftclicks !== 0){
          leftclicks-- 
          };
-         if(leftclicks<=3 && rightclicks<=2){
+         if(leftclicks<=4 && rightclicks<=3){
             for(i=0;i<contentarray.length; i++){
                
                 for(i=0;i<leftvaluearray.length;i++){
@@ -315,15 +411,15 @@ function Slide(){
     
     locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
-      runSearch();
+      runSearch(locationvalue.value);
         divsPositioned();
        }
 });
     
     searchbtn.addEventListener('click', function(){
-       runSearch();
+       runSearch(locationvalue.value);
         divsPositioned();
 });
 
-
+addFavourite()
 

@@ -14,14 +14,20 @@
     <link rel="stylesheet" type="text/css" href="project1.css">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="earth.png">
+    
+
+     
     </head>
 
     
     <body>
     
+    <div class='favourite' id='favourite'></div>
+    <div class='favourites' id='favourites'></div>
+    
        
     <div class=inputdiv>
-        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus>
+        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus value='Berlin'>
         
         <input id="btn" type="button" value="Search"/>
     </div>
@@ -40,18 +46,18 @@
         
         <div class="project1Explore" id='explore' href="#three!">
         
-    
-            
         </div>
         
+        <div class="project1Photos" id='photos' href="#four!">
+        </div>
          <!--THE BUTTONS------------------------------------->
          
-         <button class='leftarrow' id='leftarrow'><span class='rotatecounterclockwise'></span></button>
-         <button class='rightarrow' id='rightarrow'><span class='rotateclockwise'>Explore</span></button>
+         <div class='leftarrow' id='leftarrow'><span class='rotatecounterclockwise'></span></div>
+         <div class='rightarrow' id='rightarrow'><span class='rotateclockwise'></span></div>
          
          <!------------------------------------------------------->
         
-        </div>
+        
         
   
  
@@ -73,9 +79,13 @@
      
       <!--Import jQuery before materialize.js-->
 
+      <script src="project1.js"></script>
+        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6KmbFZq8qoOjMYzd4KEyZBnI7_XTZhAY&callback=myMap"></script>
+   
+
       
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=myMap"></script>
-<script src="project1.js"></script>
+
     </body>
   </html>
