@@ -104,7 +104,7 @@ function getWeather(){
         let iconsrc = `http://openweathermap.org/img/w/${icon}.png`;
         // weathericon.src=iconsrc;
 
-        let data = `<div><h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description}, 
+        let data = `<div><h5 style="color:green;">${locationvalue.value} weather:</h5><p style="color:red;">${res.weather[0].main}, description: ${res.weather[0].description}, 
         wind speed: ${res.wind.speed}, temperature: ${res.main.temp} °C <img src=${iconsrc}></p></div>`;
         //let data = "<h5 style=color:green;>"+inputValue
         
