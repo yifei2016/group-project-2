@@ -1,0 +1,15 @@
+.center{
+  visibility: hidden;
+  background-color:black;
+  color:white;
+  padding:20px 20px 20px 20px;
+}
+#close{
+  background-color: #2E4430;
+}
+#paragraph{
+  font-size: 120%;
+}
+.hra{
+  border-color:#2E4430;
+}
