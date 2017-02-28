@@ -2,12 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="aboutus.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
 
   </head>
   <body>
-    <nav>Sebbes nav här</nav>
+    
+    <!--The navbar--------------------------->
+	<nav style="background-color: rgba(46, 68, 48, 0.3);">
+      <div class="nav-wrapper">
+        <a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;"> </a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="carouseltest.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">How it Works</a></li> <!--make modal here------>
+        </ul>
+      </div>
+    </nav>
+    <!--Slut på nav----------------------------->
 
     <div class="container">
       <div class="item intro">
@@ -20,7 +36,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium risus at erat vehicula tincidunt eu non urna. Nam nulla magna, tempor in hendrerit in, luctus ut ex. Nullam interdum dolor ut arcu fermentum, vitae dignissim nibh ullamcorper. Nullam non libero ex. Proin eu enim neque. Phasellus id malesuada lectus. Proin faucibus efficitur nunc in iaculis. Sed tincidunt nisl eget magna aliquet, ut tristique eros dictum. Phasellus consectetur ut justo eget congue. Donec at posuere ex, ut scelerisque quam. Fusce quis imperdiet massa.</p>
       </div>
       <div class="item us two">
-        <img alt="Matija" src="matija.jpg"/>
+        <img alt="Matija" src="matija2.jpg"/>
         <p><span style="font-weight: bold;">Matija</span><br>
         Sed elementum, purus a fermentum mollis, mauris ligula consequat arcu, vitae rhoncus nisl felis non orci. Nullam fringilla neque diam, eget dapibus dui lacinia porttitor. Suspendisse potenti. Sed ac pharetra erat, non fringilla sapien. Integer vulputate viverra consectetur. Vestibulum in justo eu turpis egestas tincidunt eget in ante. Aliquam rutrum vel mauris vel tincidunt. Phasellus ante massa, auctor convallis maximus a, aliquam et erat. Nunc eu pretium velit, et pellentesque mi. Vestibulum vitae venenatis leo.</p>
       </div>
@@ -39,38 +55,39 @@
         <p><span style="font-weight: bold;">Yifei</span><br>
         Nullam efficitur, urna ac finibus euismod, sem lectus lobortis neque, at ornare massa dui vel justo. Praesent lectus sem, tempor ut mauris ac, varius ultrices lacus. Suspendisse mollis sit amet tellus vel egestas. Maecenas auctor posuere nunc, eu elementum tortor tristique in. Fusce nisi mi, convallis in ullamcorper vitae, euismod non enim. Curabitur rhoncus, felis quis elementum ultricies, lacus eros pellentesque velit, ac accumsan justo eros egestas velit. Vestibulum venenatis nisi a diam luctus ornare. Nullam dictum tempor leo blandit euismod.</p>
       </div>
-      
-      <p>Would you like to share your thoughts with us?</p>      
-        <form>
-          <div class="name-input">
-            <label for="inputName">Name</label>
+      <div class="bottom">
+        <div class="bottom-left">
+          <p>Would you like to share your thoughts with us?</p>   <form>
+            <div class="name-input">
+              <label for="inputName">Name</label>
               <input type="text" id="inputName">
-          </div>
-          <div class="email-input">
-            <label for="inputEmail3">Email</label>
+            </div>
+            <div class="email-input">
+              <label for="inputEmail3">Email</label>
               <input type="email" id="inputEmail3">
-          </div>
-          <div class="message-input">
-            <label for="exampleTextarea">Message</label>
+            </div>
+            <div class="message-input">
+              <label for="exampleTextarea">Message</label>
               <textarea id="exampleTextarea"></textarea>
-          </div>
-          <div>
-              <button type="submit">Submit</button>
-          </div>
-        </form>
+            </div>
+            <div>
+              <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+            </div>
+          </form>
+        </div>
 
+        <footer>
+          <p><span style="font-weight: bold;">MapGo</span></p>
+          <address>Mölndalsvägen 77, 412 63 Göteborg</address>
+
+          <div class="media-icon-group">
+              <a href="#"><i class="fa fa-twitter-square fa-2x media-icon" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook-official fa-2x media-icon" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram fa-2x media-icon" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-envelope-o fa-2x media-icon" aria-hidden="true"></i></a>  
+          </div>      
+        </footer>
+      </div>
     </div>
-    
-    <footer>
-      <p><span style="font-weight: bold;">MapGo</span></p>
-      <address>Mölndalsvägen 77, 412 63 Göteborg</address>
-      
-      <div class="media-icon-group">
-          <a href="#"><i class="fa fa-twitter-square fa-2x media-icon" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-facebook-official fa-2x media-icon" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram fa-2x media-icon" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-envelope-o fa-2x media-icon" aria-hidden="true"></i></a>  
-      </div>      
-    </footer>
   </body>
 </html>
