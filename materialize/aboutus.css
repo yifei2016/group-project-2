@@ -8,11 +8,11 @@ body {
 ::-webkit-scrollbar {
   width: 8px;  /* for vertical scrollbars */
   height: 12px; /* for horizontal scrollbars */
-  scrollbar-face-color: #367CD2 ;
-  scrollbar-shadow-color: #FFFFFF ;
-  scrollbar-highlight-color: #FFFFFF ;
-  scrollbar-track-color: #FFFFFF ;
-  scrollbar-arrow-color: #FFFFFF ;
+  scrollbar-face-color: #367CD2;
+  scrollbar-shadow-color: #FFFFFF;
+  scrollbar-highlight-color: #FFFFFF;
+  scrollbar-track-color: #FFFFFF;
+  scrollbar-arrow-color: #FFFFFF;
 }
 
 ::-webkit-scrollbar-track {
@@ -21,16 +21,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #fff;
-}
-/*placeholder for now, insert sebbes nav*/
-nav {
-  display: flex;
-  flex-direction: row;
-  flex: auto;
-  align-items: center;
-  justify-content: center;
-  height: 75px;
-  /*background-color: #9EA19E;*/
 }
 
 .container {
@@ -64,7 +54,7 @@ nav {
   background-color: lightgray;
 }
 
-img {
+.container img {
   height: 150px;
   min-width: 150px;
   display: inline-block;
@@ -82,6 +72,8 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: space-around;
 }
 
 .bottom-left {
@@ -89,51 +81,56 @@ img {
   /*border: 1px solid red;*/
 }
 /*=== form element ===*/
-.bottom-left > p {
+bottom-left > p {
   margin-top: 50px;
   margin-bottom: 10px;
   font-size: 1.2em;
 }
-form {
+.bottom-left form {
   display: flex;
   flex-direction: column;
 }
-input {
-  flex: auto;
-  min-width: 300px;
-  height: 1.5em;
-  /*margin: 3px 0px 13px;*/
+
+
+
+#inputName, #inputEmail3, #exampleTextarea {
+  /*border: 1px solid #2E4430;*/
+  margin-bottom: 20px;
 }
-textarea {
+#exampleTextarea {
   width: auto;
   min-width: 300px;
   height: 6em;
 }
+#nameLabel, #emailLabel, #messageLabel {
+  color: #2E4430;
+  font-size: 0.8em;
+}
+
 label {
   display: block;
-  margin: 13px 0px 3px;
+  margin: 13px 0px 1px;
 }
 /*===================*/
 
-footer {
+#footer {
   display: flex;
   flex-direction: column;
   flex: auto;
   align-items: center;
   height: auto;
   min-width: 250px;
-  /*background-color: #9EA19E;*/
   color: #2E4430;
   justify-content: center;
-  
+  margin-left: 60px;
   /*border: 1px solid green;*/
 }
 
-footer > p {
+#footer > p {
   margin: 4px;
 }
 
-button {
+button[type=submit] {
   margin-top: 5px;
   color: lightgray;
   font-weight: bold;
@@ -144,10 +141,9 @@ button {
 }
 
 
-
 /*=== SMALL SCREENS ===*/
 @media (max-width: 937px) {
-  footer {
+  #footer {
     margin-top: 30px;
   }
 }
@@ -167,5 +163,8 @@ button {
     flex-direction: column;
     flex-wrap: nowrap;
     margin: 10px;
+  }
+  #footer {
+    margin-left: 0px;
   }
 }

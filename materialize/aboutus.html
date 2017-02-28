@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>MapGo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="aboutus.css">
@@ -8,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico">
+    <link type="text/css" rel="stylesheet" href="project1.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen, projection"/>
 
   </head>
   <body>
@@ -15,7 +20,7 @@
     <!--The navbar--------------------------->
 	<nav style="background-color: rgba(46, 68, 48, 0.3);">
       <div class="nav-wrapper">
-        <a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;"> </a>
+        <a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;" alt="logo"> </a>
         <ul id="nav-mobile" class="right">
           <li><a href="carouseltest.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -59,15 +64,15 @@
         <div class="bottom-left">
           <p>Would you like to share your thoughts with us?</p>   <form>
             <div class="name-input">
-              <label for="inputName">Name</label>
+              <label for="inputName" id="nameLabel">Name</label>
               <input type="text" id="inputName">
             </div>
             <div class="email-input">
-              <label for="inputEmail3">Email</label>
+              <label for="inputEmail3" id="emailLabel">Email</label>
               <input type="email" id="inputEmail3">
             </div>
             <div class="message-input">
-              <label for="exampleTextarea">Message</label>
+              <label for="exampleTextarea" id="messageLabel">Message</label>
               <textarea id="exampleTextarea"></textarea>
             </div>
             <div>
@@ -76,16 +81,15 @@
           </form>
         </div>
 
-        <footer>
+        <footer id="footer">
           <p><span style="font-weight: bold;">MapGo</span></p>
-          <address>Mölndalsvägen 77, 412 63 Göteborg</address>
-
           <div class="media-icon-group">
               <a href="#"><i class="fa fa-twitter-square fa-2x media-icon" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-facebook-official fa-2x media-icon" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-instagram fa-2x media-icon" aria-hidden="true"></i></a>
               <a href="#"><i class="fa fa-envelope-o fa-2x media-icon" aria-hidden="true"></i></a>  
-          </div>      
+          </div>
+          <address>Mölndalsvägen 77, 412 63 Göteborg</address>
         </footer>
       </div>
     </div>
