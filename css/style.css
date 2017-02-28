@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 
 .container-fluid {
 	background-color: #b4c89e;
 }
+=======
+/*#body {
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(75deg, #8b8e83, #d0d1cd);
+  margin-bottom: 0px;
+  
+}*/
+>>>>>>> origin/louice
+
 
 nav a:hover {
   cursor: pointer;
@@ -19,16 +30,22 @@ nav a:hover {
   outline: none;
 }
 
+<<<<<<< HEAD
 .row {
   margin-top: 60px;
   
+=======
+.search-nav {
+  margin-top: 30px;
+  margin-bottom: 50px;
+>>>>>>> origin/louice
 }
 
 footer {
   padding:20px 0px 0px 0px;
   /*position:absolute;*/
   /*bottom: 0px;*/
-  width:  100vw;
+  /*width:  100vw;*/
   /*height: 20vh;*/
   background-color: #b4c89e;
 }
@@ -46,7 +63,7 @@ footer > div{
   display: flex;
   justify-content: center;
 }
-.media-icon{
+.media-icon {
   color: light-blue;
 }
 .contact-us{
@@ -76,9 +93,8 @@ footer > div{
     color: white;
     font-size: 2em;
 }
-
-
-#workremoveadd{
+/*pre vers*/
+/*#workremoveadd{
     position: absolute;
     width: 70vw;
     transition: 1s ease;
@@ -89,7 +105,7 @@ footer > div{
     border: 2px solid white;
 	
 }
-
+ 
 #explore{
         position: absolute;
         top: 0;
@@ -100,7 +116,11 @@ footer > div{
         background-repeat: no-repeat;
         left: 0;
         color: black;
+<<<<<<< HEAD
         overflow:scroll; 
+=======
+        overflow:scroll;
+>>>>>>> origin/louice
 }
 
     #map{
@@ -113,15 +133,73 @@ footer > div{
         background-repeat: no-repeat;
         left: 0;
         color: black;
+        
 }
 
     #weather{
         position: absolute;
+<<<<<<< HEAD
         top: 0;      
+=======
+        top: 0;
+>>>>>>> origin/louice
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
         background-size: 100%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        
+}*/
+
+/*niklas test*/
+#workremoveadd{
+    position: absolute;
+    width: 70vw;
+    transition: 1s ease;
+    left: 14vw;
+    height: 33vw;
+    top: 15vh;
+    overflow: hidden;
+    border: 0px solid white;
+}
+
+#explore{
+        position: absolute;
+        top: 0;
+        width: 6vw;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(books.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow-y:scroll; 
+}
+
+    #map{
+        position: absolute;
+        top: 0;
+        width: 60vw;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(maps.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+}
+
+    #weather{ 
+        position: absolute;
+        top: 0;
+        width: 60vw;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(Weather-PNG-Pic.png);
+        background-size: 50%;
         background-repeat: no-repeat;
         left: 0;
         color: black;

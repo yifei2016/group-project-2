@@ -182,6 +182,7 @@ html, #body {
     top: 133vw;
     overflow: hidden;
 }
+<<<<<<< HEAD
 
 
 nav div img {
@@ -302,3 +303,10 @@ nav div img {
 	}
 	
 }
+=======
+/*
+@media {
+  screen and portrait
+  
+}
+>>>>>>> origin/louice
