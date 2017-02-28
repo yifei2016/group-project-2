@@ -32,15 +32,18 @@ function putMarkOnMap(event){
        req.onreadystatechange = function(event) {
         if( req.status == 200 && req.readyState == 4){
             let res = JSON.parse(req.responseText);
-            let data = `weather: ${res.weather[0].main}, 
-            description: ${res.weather[0].description}, 
-            temperature: ${res.main.temp},
-            wind speed: ${res.wind.speed}, 
-            cloud: ${res.clouds.all}`;
+             let icon = res.weather[0].icon;
+        
+        // let iconsrc = 'url(http://openweathermap.org/img/w/' + iconpath;
+        let iconsrc = `http://openweathermap.org/img/w/${icon}.png`;
+        // weathericon.src=iconsrc;
+            let data = `<div><h5 style="color:green;">${locationvalue.value} weather:</h5><p style="color:red;">${res.weather[0].main}, description: ${res.weather[0].description}, 
+        wind speed: ${res.wind.speed}, temperature: ${res.main.temp} °C <img src=${iconsrc}></p></div>`;
             let weather = document.getElementById("weather");
             weather.innerHTML = data;
         }
 
     }
+    
     req.send();
 }
