@@ -1,0 +1,295 @@
+body{
+    background-image: url(background.png);
+    background-size: 100%;
+    /*background-repeat: no-repeat;*/
+    font-family: 'Raleway', sans-serif;
+    /*display: flex;
+	min-height: 100vh;
+	flex-direction: column;*/
+}
+
+html, #body {
+	margin: 0;
+	padding: 0;
+}
+
+#header-nav {
+	width:105vw;
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+      scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #fff;
+}
+
+
+
+    #explore{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(books.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow-y:scroll; 
+        font-size: 2em;
+        padding: 2em 2em;
+}
+
+    #map{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(maps.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+}
+
+    #weather{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(Weather-PNG-Pic.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        
+}
+
+
+.inputdiv{
+    position: fixed;
+    top: 30vh;
+    height: 10vh;
+    width: 35vw;
+    left: 30vw;
+    transition: 1.5s ease;
+}
+
+#locationvalue{
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+}
+
+#btn{
+    position:absolute;
+    top:0vh;
+    height: 100%;
+    width:20%;
+    font-size: 1.5vw;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;
+}
+
+#btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
+    color: #e0e0e0;
+    background-color: rgba(46, 68, 48, 1);
+    
+}
+
+
+.leftarrow{
+    position:absolute;
+    width: 5vw;
+    height: 85%;
+    border: 2px solid grey;
+    background-color: grey;
+    top: 4vh;
+    left: 0vw;
+    color: white;
+    font-size: 2em;
+    transition: 0.8s ease;
+    text-align: center;
+    }
+
+.rightarrow{
+    position:absolute;
+    width: 5vw;
+    height: 85%;
+    border: 2px solid grey;
+    background-color: grey;
+    top: 4vh;
+    right: 0vw;
+    color: white;
+    font-size: 2em;
+    transition: 0.8s ease;
+    text-align: center;  
+}
+
+    .rotateclockwise{
+        display: block;
+  -ms-transform:rotate(-270deg); /* IE 9 */
+  -moz-transform:rotate(-270deg); /* Firefox */
+  -webkit-transform:rotate(-270deg); /* Safari and Chrome */
+  -o-transform:rotate(-270deg); /* Opera */
+        transition: 0.8s ease;
+    }
+
+.rotatecounterclockwise{
+    display: block;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+}
+
+
+#removeadd{
+    position: absolute;
+    width: 70vw;
+    transition: 1s ease;
+    left: 14vw;
+    height: 33vw;
+    top: 133vw;
+    overflow: hidden;
+}
+
+
+nav div img {
+	margin-top: 3px;
+}
+
+/*-----------Media Queries-----------*/
+
+
+@media screen and (max-width: 700px) {
+	.inputdiv {
+    position: fixed;
+    top: 30vh;
+    height: 9vh;
+    width: 40vw;
+    left: 25vw;
+    transition: 1.5s ease;
+	}
+	#header-nav {
+	height: 64px;
+	line-height: 64px;
+	}
+	#btn {
+	position:absolute;
+    top:0vh;
+    height: 100%;
+    width: 30%;
+    font-size: 2vw;
+    /*background-color: #e0e0e0;*/
+    /*color: #635822;
+    transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;*/
+	}
+	#locationvalue {
+	position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+	}
+	#removeadd {
+	top: 140vh;
+	}
+	
+}
+
+@media screen and (min-width:701px) and (max-width:1024px) {
+	.inputdiv {
+	position: fixed;
+    top: 30vh;
+    height: 10vh;
+    width: 35vw;
+    left: 30vw;
+    transition: 1.5s ease;
+	}
+	#btn {
+	position:absolute;
+    top:0vh;
+    height: 100%;
+    width: 35%;
+    font-size: 1.8vw;
+    background-color: #e0e0e0;
+    /*color: #635822;*/
+    /*transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;*/
+	}
+	#locationvalue {
+	position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+	}
+	#removeadd {
+	top: 140vh;
+	}
+	
+}
+/*@media screen and (min-width:1025px) {
+	.inputdiv {
+	top: 30vh;
+	width: 35vw;
+	}
+	#btn {
+	/*width: 25%;
+	left: 75%;
+	}
+	
+	
+}
+*/
