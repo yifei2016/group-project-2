@@ -14,7 +14,7 @@ html, #body {
 }
 
 #header-nav {
-	width:105vw;
+	width:100vw;
 }
 
 ::-webkit-scrollbar
@@ -185,13 +185,16 @@ html, #body {
 
 
 nav div img {
-	margin-top: 3px;
+	margin-top: 2px;
+	width: 55px;
+	height: 60px;
+	/*margin-bottom: 2px;*/
 }
 
 /*-----------Media Queries-----------*/
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
 	.inputdiv {
     position: fixed;
     top: 30vh;
@@ -238,7 +241,7 @@ nav div img {
 	
 }
 
-@media screen and (min-width:701px) and (max-width:1024px) {
+@media screen and (min-width:601px) and (max-width:992px) {
 	.inputdiv {
 	position: fixed;
     top: 30vh;
@@ -259,6 +262,10 @@ nav div img {
     font-family: 'Raleway', sans-serif;
     left: 80%;*/
 	}
+	/*nav #justify-logo .brand-logo {
+	font-size: 2rem;
+	left: 
+	}*/
 	#locationvalue {
 	position: absolute;
     top: 0%;
@@ -278,18 +285,20 @@ nav div img {
 	#removeadd {
 	top: 140vh;
 	}
+	nav div img {
+	margin-top: 4px;
+	/*width: 2.5em;*/
+	
+	}
+	/*nav #justify-logo .brand-logo {
+	font-size: 2rem;
+	left: 
+	}*/
 	
 }
-/*@media screen and (min-width:1025px) {
-	.inputdiv {
-	top: 30vh;
-	width: 35vw;
+@media screen and (min-width:993px) {
+	nav div img {
+	margin-left: 5px;
 	}
-	#btn {
-	/*width: 25%;
-	left: 75%;
-	}
-	
 	
 }
-*/
