@@ -1,5 +1,5 @@
-let myFunction = function(){
-console.log("sdfdsf")
+window.load=function(){
+	console.log("sdfdsf")
 	let ask = document.getElementById("ask");
 	let center = document.getElementsByClassName("center")[0];
 
@@ -12,5 +12,7 @@ console.log("sdfdsf")
 	close.addEventListener("click",function(){
 		center.style.visibility="hidden";
 	})
-})
+ })
 }
+
+
