@@ -1,8 +1,20 @@
-body {
-  background-image: url(background.png);
-  background-size: 100%;
-  /*background-repeat: no-repeat;*/
-  font-family: 'Raleway', sans-serif;
+body{
+    background-image: url(background.png);
+    background-size: 100%;
+    /*background-repeat: no-repeat;*/
+    font-family: 'Raleway', sans-serif;
+    /*display: flex;
+	min-height: 100vh;
+	flex-direction: column;*/
+}
+
+html, #body {
+	margin: 0;
+	padding: 0;
+}
+
+#header-nav {
+	width:100vw;
 }
 
 ::-webkit-scrollbar {
@@ -247,7 +259,24 @@ nav div img {
     background-color: #e0e0e0;
     color: #635822;
     transition: 1.5s ease;
-    background-color: rgba(46, 68, 48, 0.3);
+    font-family: 'Raleway', sans-serif;
+    left: 80%;
+}
+
+#btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
+    color: #e0e0e0;
+    background-color: rgba(46, 68, 48, 1);
+    
+}
+
+
+.leftarrow{
+    position:absolute;
+    width: 5vw;
+    height: 85%;
+    border: 2px solid grey;
+    background-color: grey;
+    top: 4vh;
     left: 0vw;
     border-bottom: none;
   }
@@ -266,3 +295,124 @@ nav div img {
   }
 }
 */
+
+
+
+nav div img {
+	margin-top: 2px;
+	width: 55px;
+	height: 60px;
+	/*margin-bottom: 2px;*/
+}
+
+/*-----------Media Queries-----------*/
+
+
+@media screen and (max-width: 600px) {
+	.inputdiv {
+    position: fixed;
+    top: 30vh;
+    height: 9vh;
+    width: 40vw;
+    left: 25vw;
+    transition: 1.5s ease;
+	}
+	#header-nav {
+	height: 64px;
+	line-height: 64px;
+	}
+	#btn {
+	position:absolute;
+    top:0vh;
+    height: 100%;
+    width: 30%;
+    font-size: 2vw;
+    /*background-color: #e0e0e0;*/
+    /*color: #635822;
+    transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;*/
+	}
+	#locationvalue {
+	position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+	}
+	#removeadd {
+	top: 140vh;
+	}
+	
+}
+
+@media screen and (min-width:601px) and (max-width:992px) {
+	.inputdiv {
+	position: fixed;
+    top: 30vh;
+    height: 10vh;
+    width: 35vw;
+    left: 30vw;
+    transition: 1.5s ease;
+	}
+	#btn {
+	position:absolute;
+    top:0vh;
+    height: 100%;
+    width: 35%;
+    font-size: 1.8vw;
+    background-color: #e0e0e0;
+    /*color: #635822;*/
+    /*transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;*/
+	}
+	/*nav #justify-logo .brand-logo {
+	font-size: 2rem;
+	left: 
+	}*/
+	#locationvalue {
+	position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+	}
+	#removeadd {
+	top: 140vh;
+	}
+	nav div img {
+	margin-top: 4px;
+	/*width: 2.5em;*/
+	
+	}
+	/*nav #justify-logo .brand-logo {
+	font-size: 2rem;
+	left: 
+	}*/
+	
+}
+@media screen and (min-width:993px) {
+	nav div img {
+	margin-left: 5px;
+	}
+	
+}

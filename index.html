@@ -12,11 +12,13 @@
 
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
   </head>
   
+
   <body id="body">
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: #b4c89e;">
     <nav class="navbar  navbar-toggleable-md navbar-light bg-faded" style="background-color: #b4c89e;">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +48,7 @@
               </div>
               <div class="modal-body">
                 <h5 class="modal-title" id="exampleModalLabel">Make a search by clicking inside the search bar and press enter or the Go! button.<br>After your search is made, navigate 
-				between our different catergories and pick the one you perfer.</br></h5>
+				between our different catergories and pick the one you perfer.<br></h5>
 				<!-- content added to How it works-->
               </div>
               <div class="modal-footer">
@@ -61,34 +63,46 @@
     <br>
 
     <div class="container-fluid"> 
-      <div class="row offset-md-2 col-md-10 search-nav">
-        <input type="textarea" class="col-md-8" id="locationvalue" autofocus>
-        <button type="button" class="col-md-2 btn-success" id="btn">Go!</button>
+      <div class="row offset-3 col-md-6 col-xs-8">
+        <input type="textarea" class="col-lg-8 col-xs-9" id="locationvalue" autofocus>
+        <button type="button" class="col-lg-4 col-xs-3 btn-success" id="btn">Go!</button>
       </div>
     </div> 
 
-         <div id='workremoveadd'>
+
         
-        <div class="project1Map" id='map' href="#one!">
+        <div class="project1Map" id='map'>
           
         </div>
         
-        <div class="project1Weather" id='weather' href="#two!">
+        <div class="project1Weather" id='weather'>
           
         </div>
         
-        <div class="project1Explore" id='explore' href="#three!">
+        <div class="project1Explore" id='explore'>
           
-            
-        </div>
-        
-        </div>
+		  </div>
         
         <button class='leftarrow' id='leftarrow'> </button>
+
+         <button class='rightarrow' id='rightarrow' ></button>
+      </div>  -->
+    
+<!--
+    <footer style="position:absolute; bottom:0px;">
+
          <button class='rightarrow' id='rightarrow' </button>
     
 
     <footer>
+
+        <button class='rightarrow' id='rightarrow'></button>
+      </div>
+    </div>
+
+    <footer style="">
+
+
       <div class="container-fluid">
         <div class="footer">
           <address class="text-center">
@@ -109,11 +123,12 @@
           <p class="contact-us">Click on the button above to contact us.</p>
         </div>
       </div>
-    </footer>
+    </footer> -->
     
    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=initMap"
-    async defer></script>
+
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=myMap"></script>
 
     <script src="js/script.js"></script> 
   </body>

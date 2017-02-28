@@ -26,7 +26,7 @@ console.log('- success!');
         
        displayedtext+= myPlaceParsed[2] + '<br>'+'<br>'
 
-    //console.log(myPlaceParsed);
+    console.log(myPlaceParsed);
     project1Explore.innerHTML = displayedtext
     //project1Explore.style.top='86px';
     project1Explore.style.backgroundImage='none'
@@ -237,8 +237,8 @@ function Slide(){
 
                 contentarray[i].style.left=newleftvalue1
                 };
-                
-                contentarray[i].style.left=newleftvalue1
+                  console.log('contentarray skrivs ut :' + contentarray)
+                 contentarray[i].style.left=newleftvalue1
             };
         };
             console.log(rightclicks, leftclicks)
