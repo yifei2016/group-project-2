@@ -1,8 +1,34 @@
+
 window.onload=function(){
     setTimeout(function(){
         locationvalue.focus()
     }, 100)
 };
+
+let inputDiv = document.getElementsByClassName('inputdiv')[0]
+let removeadd = document.getElementById('removeadd')
+let leftarrow = document.getElementById('leftarrow')
+let rightarrow = document.getElementById('rightarrow')
+
+
+
+function divsPositioned(){
+    removeadd.style.top='15vh';
+    inputDiv.style.top='5vh';
+    rightarrow.style.top='4vh';
+    leftarrow.style.top='4vh';
+    rightarrow.style.right='0vw';
+    leftarrow.style.left='0vw';
+    
+    for(i=0;i>0&&i<contentarray.length;i++){
+        contentarray[i].style.display='none';
+    };
+    
+    setTimeout(function(){
+        removeadd.style.overflow= 'hidden';
+    }, 1500)
+    
+}
 
 
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
@@ -11,8 +37,9 @@ window.onload=function(){
     
     let req = new XMLHttpRequest
     
-        let url = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";
-    
+        "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";
+        
+        let url = "https://en.wikipedia.org/w/api.php?format=xml&action=query&exlimit=max&explaintext&titles=" + locationvalue.value + "&prop=revisions&rvprop=content&origin=*"
         req.open('GET', url);
     
 req.onreadystatechange = function(event) {
@@ -20,11 +47,13 @@ req.onreadystatechange = function(event) {
 	if( req.readyState == 4 )
 console.log('- success!');
 	console.log("-----");
-    let myPlaceParsed = JSON.parse(req.responseText)
+    let myPlaceParsed = req.responseText
   let displayedtext= '';
     
+    console.log(myPlaceParsed)
+    
         
-       displayedtext+= myPlaceParsed[2] + '<br>'+'<br>'
+       displayedtext+= myPlaceParsed[3]
 
     //console.log(myPlaceParsed);
     project1Explore.innerHTML = displayedtext
@@ -93,16 +122,10 @@ function getWeather(){
     req.onreadystatechange = function(event) {
       if( req.readyState == 4 ){
         let res = JSON.parse(req.responseText);
+        console.log(req.responseText)
         
-       // let weathericon = document.createElement('IMG');
-        let icon = res.weather[0].icon;
-        
-        // let iconsrc = 'url(http://openweathermap.org/img/w/' + iconpath;
-        let iconsrc = `http://openweathermap.org/img/w/${icon}.png`;
-        // weathericon.src=iconsrc;
-
-        let data = `<div><h5 style="color:green;">${locationvalue.value} weather:</h5><p style="color:red;">${res.weather[0].main}, description: ${res.weather[0].description}, 
-        wind speed: ${res.wind.speed}, temperature: ${res.main.temp} °C <img src=${iconsrc}></p></div>`;
+        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
+        //let data = "<h5 style=color:green;>"+inputValue
         
        project1Weather.innerHTML = data;
        project1Weather.style.backgroundImage='none'
@@ -123,50 +146,186 @@ function getWeather(){
 
 
 //-------------THESE ARE THE DIVS IN WHICH TO DISPLAY THE API RESPONSES, SHOULD BE SWITCHED TO THE DIVS USED IN THE HTML & CSS TEMPLATE---//
-let project1Map = document.getElementById('map')
-
-let project1Explore = document.getElementById('explore')
-let project1Weather = document.getElementById('weather')
+let project1Map = document.getElementById('map');
+let project1Explore = document.getElementById('explore');
+let project1Weather = document.getElementById('weather');
 
 let contentarray = [];
 contentarray.push(project1Map, project1Explore, project1Weather)
 
-function resetClasses() {
-        project1Map.className = "carousel-item project1Map"
-        project1Explore.className = "carousel-item project1Explore"
-        project1Weather.className = "carousel-item project1Weather";
+
+/*
+function resetIDs() {
+        project1Map.id = 'map'
+        project1Explore.id = 'explore'
+        project1Weather.id = 'weather'
 };
 
 
 for(i=0; i<=2; i++){
+    let index = i
     contentarray[i].addEventListener('click', function(){
-        resetClasses();
-         contentarray[i].className='centered';
+        console.log(contentarray[index])
+         resetIDs();
+         contentarray[index].id = 'centered';
     });
     
     
 }
+
+*/
     
 //---------------------------------------------------------------------------------------------------------------------------//
 
-    let searchbtn = document.getElementById("btn")
+    let searchbtn = document.getElementById("btn");
     
-    let locationvalue = document.getElementById('locationvalue')
+    let locationvalue = document.getElementById('locationvalue');
     
     function runSearch(){
         getExplore();
         getPlaceOnMap();
         getWeather();
-    }
+    };
     
-locationvalue.addEventListener('keydown', function(key){
+
+
+
+
+function Slide(){
+    
+    let rightstringarray = ['Explore', 'Weather', ''];
+    let leftstringarray = ['', 'Map', 'Explore'];
+
+    
+    let leftvalue = -61;
+    let leftvaluearray = [];
+    
+    for(i=0;i<contentarray.length; i++){
+    
+    leftvalue += 66
+    leftvaluearray.push(leftvalue)
+    
+    newleftvalue = leftvalue.toString() + 'vw'
+    
+    contentarray[i].className='col-xs-4'
+    contentarray[i].style.position = 'absolute'
+    contentarray[i].style.top = '4vh'
+    //contentarray[i].style.outline='3.5px solid #b9beb8'
+    contentarray[i].style.height = '85%'
+    contentarray[i].style.width = '60vw'
+    contentarray[i].style.backgroundSize = "100%"
+    contentarray[i].style.opacity='1'
+    contentarray[i].style.left=newleftvalue
+    contentarray[i].style.transition='1.5s ease'
+    contentarray[i].style.float='left'
+    //contentarray[i].style.border='2px solid white'
+    };
+    
+
+        
+        let textclockwise = document.getElementsByClassName('rotateclockwise')[0]
+        let textcounterclockwise = document.getElementsByClassName('rotatecounterclockwise')[0]
+
+              function arrowInnerHTML(){
+                  
+        textcounterclockwise.innerHTML = leftstringarray[rightclicks]
+        textclockwise.innerHTML = rightstringarray[rightclicks]
+
+
+        
+            }
+       
+        let leftclicks = 0;
+        let rightclicks = 0;
+        
+        leftarrow.addEventListener('click', function(){
+        
+            
+      
+             
+        var leftvalue1 = 0
+        const sixtysix=66;
+        
+        if(rightclicks>0 && leftclicks<4){
+            
+            leftclicks++
+            rightclicks--
+            
+            for(i=0;i<contentarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]+=sixtysix
+
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                contentarray[i].style.left=newleftvalue1
+                };
+                
+
+            };
+        };
+            console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+            arrowInnerHTML();
+    });
+    
+     
+
+    
+    rightarrow.addEventListener('click', function(){
+        
+         var leftvalue1 = 0
+               
+         if(leftclicks<=2 && rightclicks<2){
+         rightclicks++
+         
+         if(leftclicks !== 0){
+         leftclicks-- 
+         };
+         if(leftclicks<=3 && rightclicks<=2){
+            for(i=0;i<contentarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]-=66
+
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                contentarray[i].style.left=newleftvalue1
+                };
+
+
+                
+
+            };
+         };
+        };
+   
+
+        
+        console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+        arrowInnerHTML();
+        
+    });
+        
+       
+
+}
+    
+    Slide()
+    
+    locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
       runSearch();
+        divsPositioned();
        }
 });
     
     searchbtn.addEventListener('click', function(){
        runSearch();
-        
+        divsPositioned();
 });
+
+
+
 
