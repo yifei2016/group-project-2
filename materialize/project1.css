@@ -1,0 +1,654 @@
+@media screen and (min-width: 480px) {
+    
+    body{
+    background-image: url(background.png);
+    background-size: 100%;
+    /*background-repeat: no-repeat;*/
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+      scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #fff;
+}
+
+
+#removeadd{
+    position: absolute;
+    width: 70vw;
+    transition: 1.5s ease;
+    left: 14vw;
+    height: 33vw;
+    top: 133vw;
+    overflow: hidden;
+    
+}
+    
+        
+    #removeaddpositioned{
+    top: 15vh;
+    position: absolute;
+    width: 70vw;
+    transition: 1.5s ease;
+    left: 14vw;
+    height: 33vw;
+
+    overflow: hidden;
+    }
+
+    #explore{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(books.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow-y:scroll;
+        font-size: 2em;
+        /*padding: 1em 2em;*/
+}
+
+    #map{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(maps.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+}
+
+    #weather{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(Weather-PNG-Pic.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        
+}
+
+    #photos{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow: scroll;
+        
+        
+}
+
+#favourite{
+    position: fixed;
+    right: -25vw;
+    top: 2.5vw;
+    width: 5vw;
+    height: 5vw;
+    background-image: url(icons/addfavorite.png);
+    /*background-color: rgba(50, 76, 50, 0.1);*/
+        background-size:100%;
+    transition: 0.5s ease;
+    
+}
+
+
+.favourite:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transform:skewY(10deg)
+    
+}
+
+.favourite:focus{
+transform: rotateY(180deg);
+}
+
+#favourites{
+    
+    position: fixed;
+    top: 10vw;
+    right: -30vw;
+    width: auto;
+    background-color: rgba(40, 66, 35, 0.2);
+    transition: 1s ease;
+    color: rgb(234, 242, 232);
+    overflow: scroll;
+    height: auto;
+}
+
+#favouritesdisplayed{
+    position: fixed;
+    top: 10vw;
+    right: 0vw;
+    width: 10vw;
+    height: 20vw;
+    background-color: rgba(40, 66, 35, 0.2);
+    transition: 1s ease;
+    color: rgb(234, 242, 232);
+}
+
+#favourites:hover{
+    right: 0vh;
+    cursor: pointer;
+    filter: brightness(110%);
+    
+
+
+}
+
+.favouritesdiv{
+    position: absolute;
+    width:100%;
+    height:8vh;
+    transition: 0.6s ease;
+    cursor: pointer;
+    font-size: 1.5vw;
+    font-weight: 700;
+    padding: 1vw 1vw;
+}
+
+.favouritesdiv:hover{
+    background-color: rgb(234, 242, 232);
+    color: rgb(40, 66, 35);
+}
+
+.inputdiv{
+    position: fixed;
+    top: 30vh;
+    height: 10vh;
+    width: 35vw;
+    left: 30vw;
+    transition: 1.5s ease;
+}
+    
+    .inputdivpositioned{
+        top:5vh;
+    }
+
+#locationvalue{
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2.5vw;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+}
+
+#btn{
+    position:absolute;
+    top:0vh;
+    height: 100%;
+    width:20%;
+    font-size: 1.5vw;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;
+}
+
+#btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
+    
+    color: #e0e0e0;
+    background-color: rgba(46, 68, 48, 1);
+    
+}
+
+
+.leftarrow{
+    position:absolute;
+    width: 5vw;
+    height: 85%;
+    border: 2px solid grey;
+
+    top: 4vh;
+    left: -100vw;
+    color: white;
+    font-size: 2em;
+    transition: 1.5s ease;
+    text-align: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    }
+    
+    .leftarrowpositioned{
+        top: 4vh;
+        left:0vw;
+    }
+    
+
+
+.rightarrow{
+    position:absolute;
+    width: 5vw;
+    height: 85%;
+    border: 2px solid grey;
+    cursor: pointer;
+    top: 4vh;
+    right: -100vw;
+    color: white;
+    font-size: 2em;
+    transition: 1.5s ease;
+    text-align: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+            .rightarrowpositioned{
+        top: 4vh;
+        right:0vw;
+    }
+    
+    .rotateclockwise{
+  text-align: center;
+  color: white;
+  display: block;
+        width: 100%;
+  -ms-transform:rotate(-270deg); /* IE 9 */
+  -moz-transform:rotate(-270deg); /* Firefox */
+  -webkit-transform:rotate(-270deg); /* Safari and Chrome */
+  -o-transform:rotate(-270deg); /* Opera */
+    transition: 1.5s ease;
+
+
+    }
+
+.rotatecounterclockwise{
+    display: block;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+    transition: 1.5s ease;
+
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.photodiv{
+    
+    width: 10vw;
+    height: 50%;
+    top: 0;
+    left: 30vw;
+    z-index: 1000;
+    border: 2px solid black;
+}
+    
+}
+
+.center{
+  visibility: hidden;
+  background-color:black;
+  color:white;
+  padding:20px 20px 20px 20px;
+  position: absolute;
+  z-index:2;
+}
+#close{
+  background-color: #2E4430;
+}
+#paragraph{
+  font-size: 120%;
+}
+.hra{
+  border-color:#2E4430;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 479px) {
+
+    body{
+    background-image: url(background.png);
+    background-size: 100%;
+    /*background-repeat: no-repeat;*/
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+      scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #fff;
+}
+
+#removeadd{
+    position: absolute;
+    width: 70vw;
+    transition: 1.5s ease;
+    left: 14vw;
+    height: 80vh;
+    top: 190vw;
+    overflow: hidden;
+    
+}
+    
+    #removeaddpositioned{
+    top: 15vh;
+    position: absolute;
+    width: 70vw;
+    transition: 1.5s ease;
+    left: 14vw;
+    height: 80vh;
+    overflow: hidden;
+    }
+    
+    .leftarrow{
+    position:fixed;
+    width: 10vw;
+    height: 40vh;
+    border: 2px solid grey;
+    left:0;
+    top: 30vh;
+
+    color: white;
+    font-size: 2em;
+    transition: 1.5s ease;
+    text-align: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    }
+
+.rightarrow{
+
+    position:fixed;
+    width: 10vw;
+    height: 40vh;
+    border: 2px solid grey;
+    right:0;
+    top: 30vh;
+
+    color: white;
+    font-size: 2em;
+    transition: 1.5s ease;
+    text-align: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    }
+
+
+    #explore{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(books.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow-y:scroll;
+        font-size: 2em;
+        padding: 1em 2em;
+}
+
+    #map{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(maps.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+}
+
+    #weather{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(Weather-PNG-Pic.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        
+}
+
+    #photos{
+        position: absolute;
+        top: 0;
+        border: 2px solid #b9beb8;
+        transition: 0.5s ease;
+        background-image: url(Weather-PNG-Pic.png);
+        background-size: 50%;
+        background-repeat: no-repeat;
+        left: 0;
+        color: black;
+        overflow:scroll:
+        
+        
+}
+
+#favourite{
+    position: fixed;
+    right: -25vw;
+    top: 2.5vw;
+    width: 5vw;
+    height: 5vw;
+    background-image: url(icons/addfavorite.png);
+    /*background-color: rgba(50, 76, 50, 0.1);*/
+        background-size:100%;
+    transition: 0.5s ease;
+    
+}
+
+
+.favourite:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transform:skewY(10deg)
+    
+}
+
+.favourite:focus{
+transform: rotateY(180deg);
+}
+
+#favourites{
+    
+    position: fixed;
+    top: 10vw;
+    right: -30vw;
+    width: 10vw;
+    height: 20vw;
+    background-color: rgba(40, 66, 35, 0.2);
+    transition: 1s ease;
+    color: rgb(234, 242, 232);
+    font-size: 1vh;
+}
+
+#favouritesdisplayed{
+    position: fixed;
+    top: 10vw;
+    right: -5vw;
+    width: 10vw;
+    height: 20vw;
+    background-color: rgba(40, 66, 35, 0.2);
+    transition: 1s ease;
+    color: rgb(234, 242, 232);
+}
+
+#favourites:hover{
+    right: 0vh;
+    cursor: pointer;
+    filter: brightness(110%);
+    
+
+
+}
+
+.favouritesdiv{
+    position: absolute;
+    width:100%;
+    height:4vh;
+    transition: 0.3s ease;
+    font-size: 2vh;
+}
+
+.favouritesdiv:hover{
+    background-color: rgb(234, 242, 232);
+    color: rgb(40, 66, 35);
+}
+
+.inputdiv{
+    position: fixed;
+    top: 30vh;
+    height: 4vh;
+    width: 35vw;
+    left: 30vw;
+    transition: 1.5s ease;
+    font-size: 2vh;
+}
+    
+       
+    .inputdivpositioned{
+        top:5vh;
+    }
+
+#locationvalue{
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width:80%;
+    font-size: 2vh;
+    font-weight: 1.5;
+    padding: 0 0 0 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    background-color: rgba(46, 68, 48, 0.3);
+    left: 0vw;
+    border-bottom: none;
+}
+
+#btn{
+    position:absolute;
+    top:0vh;
+    height: 100%;
+    width:40;
+    font-size: 2vh;
+    background-color: #e0e0e0;
+    color: #635822;
+    transition: 1.5s ease;
+    font-family: 'Raleway', sans-serif;
+    left: 80%;
+    box-shadow: none;
+}
+
+#btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
+    
+    color: #e0e0e0;
+    background-color: rgba(46, 68, 48, 1);
+    
+}
+
+
+
+
+    .rotateclockwise{
+  text-align: center;
+  color: white;
+  display: block;
+        width: 100%;
+  -ms-transform:rotate(-270deg); /* IE 9 */
+  -moz-transform:rotate(-270deg); /* Firefox */
+  -webkit-transform:rotate(-270deg); /* Safari and Chrome */
+  -o-transform:rotate(-270deg); /* Opera */
+    transition: 1.5s ease;
+
+
+    }
+
+.rotatecounterclockwise{
+    display: block;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+    transition: 1.5s ease;
+
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+.image1{
+    position:absolute;
+    width: 50vw;
+    height: 30vw;
+    top: 0;
+    left: 30vw;
+    z-index: 1000;
+    border: 2px solid black;
+}
+}
