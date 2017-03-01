@@ -1,3 +1,4 @@
+console.log("dfsdf")
 window.onload = function() {
 
   console.log("dfsdf")
