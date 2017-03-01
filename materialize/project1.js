@@ -403,4 +403,81 @@ function Slide(){
             leftclicks++
             rightclicks--
             
-            for(i=0;i<contentarray.length
+            for(i=0;i<contentarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]+=sixtysix
+
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                contentarray[i].style.left=newleftvalue1
+                };
+                
+
+            };
+        };
+            console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+            arrowInnerHTML();
+    });
+    
+     
+
+    
+    rightarrow.addEventListener('click', function(){
+        
+         var leftvalue1 = 0
+               
+         if(leftclicks<=3 && rightclicks<3){
+         rightclicks++
+         
+         if(leftclicks !== 0){
+         leftclicks-- 
+         };
+         if(leftclicks<=4 && rightclicks<=3){
+            for(i=0;i<contentarray.length; i++){
+               
+                for(i=0;i<leftvaluearray.length;i++){
+                    leftvaluearray[i]-=71.5
+
+                    leftvalue1 = leftvaluearray[i]
+                let newleftvalue1 = leftvalue1.toString() + 'vw'
+
+                contentarray[i].style.left=newleftvalue1
+                };
+
+            };
+         };
+        };
+
+        console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+        arrowInnerHTML();
+        
+    });
+
+}
+    
+    Slide()
+    
+    locationvalue.addEventListener('keydown', function(key){
+    if(event.keyCode==13){
+      
+        divsPositioned();
+        
+           setTimeout(function(){
+            runSearch(locationvalue.value);
+        }, 1500);
+       }
+});
+    
+    searchbtn.addEventListener('click', function(){
+       
+        divsPositioned();
+        
+        setTimeout(function(){
+            runSearch(locationvalue.value);
+        }, 1500);
+        
+});
+
+addFavourite()
