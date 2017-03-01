@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 window.onload=function(){
     setTimeout(function(){
         locationvalue.focus()
@@ -367,6 +368,7 @@ function Slide(){
     contentarray[i].style.top = '4vh'
     //contentarray[i].style.outline='3.5px solid #b9beb8'
     contentarray[i].style.height = '85%'
+
     contentarray[i].style.width = '58.8vw'
     contentarray[i].style.backgroundSize = "100%"
     contentarray[i].style.opacity='1'
