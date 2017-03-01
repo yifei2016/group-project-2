@@ -49,6 +49,15 @@ li {
 .hra{
   border-color:#2E4430;
 }
+
+
+
+#ask:hover, #close:hover {
+	cursor: pointer;
+}
+
+
+
 ::-webkit-scrollbar {
   width: 8px;  /* for vertical scrollbars */
   height: 12px; /* for horizontal scrollbars */
