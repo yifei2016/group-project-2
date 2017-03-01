@@ -1,5 +1,64 @@
 @media screen and (min-width: 480px) {
     
+    .ui-autocomplete{
+        width: 35vw;
+        height: 20vh;
+        overflow: scroll;
+        
+    }
+    
+    .nav-wrapper {
+	width: 50vw;
+	height: 90px;
+	display: flex;
+    flex-direction: row;
+}
+
+.brand-logo {
+	display: inline-block;
+    width: 3vw; 
+    height: 3vw;
+}
+a {
+	text-decoration: none;
+	
+}
+
+
+
+li {
+	list-style: none;
+	display: inline-block;
+	padding: 10px;
+}
+
+#ask:hover, #close:hover, #about:hover {
+	cursor: pointer;
+    transform: scale(1.2);
+    filter: brightness(130%);
+}
+    
+    #ask{
+        position: fixed;
+        right: 5vw;
+        font-size: 2vw;
+        text-decoration: none;
+        top: 2vw;
+        color: #465645;
+        transition: 0.5s ease;
+    }
+    
+    #about{
+        position: fixed;
+        right: 15vw;
+        font-size: 2vw;
+        font-weight: bolder;
+        top: 3vw;
+        text-decoration:none;
+        color: #465645;
+        transition: 0.5s ease;
+    }
+    
     body{
     background-image: url(background.png);
     background-size: 100%;
@@ -63,10 +122,11 @@
         background-size: 50%;
         background-repeat: no-repeat;
         left: 0;
-        color: black;
+        color: #465645;
         overflow-y:scroll;
-        font-size: 2em;
-        padding: 1em 2em;
+        font-size: 2vw;
+        /*padding: 1em 2em;*/
+        width: 58.8vw;
 }
 
     #map{
@@ -79,6 +139,7 @@
         background-repeat: no-repeat;
         left: 0;
         color: black;
+        width: 58.8vw;
 }
 
     #weather{
@@ -90,7 +151,8 @@
         background-size: 50%;
         background-repeat: no-repeat;
         left: 0;
-        color: black;
+        color: #465645;
+        width: 58.8vw;
         
 }
 
@@ -99,14 +161,12 @@
         top: 0;
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
-
         background-size: 50%;
         background-repeat: no-repeat;
         left: 0;
-        color: black;
-        overflow: scroll;
-        
-        
+        color: #465645;
+        overflow-x: scroll; 
+        width: 58.8vw;
 }
 
 #favourite{
@@ -145,6 +205,7 @@ transform: rotateY(180deg);
     color: rgb(234, 242, 232);
     overflow: scroll;
     height: auto;
+    border: 2px solid #465645; 
 }
 
 #favouritesdisplayed{
@@ -162,6 +223,7 @@ transform: rotateY(180deg);
     right: 0vh;
     cursor: pointer;
     filter: brightness(110%);
+    border: 2px solid #465645;
     
 
 
@@ -187,7 +249,7 @@ transform: rotateY(180deg);
     position: fixed;
     top: 30vh;
     height: 10vh;
-    width: 35vw;
+    width: 30vw;
     left: 30vw;
     transition: 1.5s ease;
 }
@@ -200,7 +262,7 @@ transform: rotateY(180deg);
     position: absolute;
     top: 0%;
     height: 100%;
-    width:80%;
+    width:100%;
     font-size: 2.5vw;
     font-weight: 1.5;
     padding: 0 0 0 20px;
@@ -216,14 +278,15 @@ transform: rotateY(180deg);
 #btn{
     position:absolute;
     top:0vh;
-    height: 100%;
+    height: 104%;
     width:20%;
     font-size: 1.5vw;
     background-color: #e0e0e0;
     color: #635822;
     transition: 1.5s ease;
     font-family: 'Raleway', sans-serif;
-    left: 80%;
+    right: -26%;
+    cursor: pointer;
 }
 
 #btn:hover, #btn:active, #locationvalue:hover, #locationvalue:active, #locationvalue:focus{
@@ -239,7 +302,6 @@ transform: rotateY(180deg);
     width: 5vw;
     height: 85%;
     border: 2px solid grey;
-
     top: 4vh;
     left: -100vw;
     color: white;
@@ -249,6 +311,8 @@ transform: rotateY(180deg);
     background-size: 100%;
     background-repeat: no-repeat;
     cursor: pointer;
+    text-align: center;
+  background-color: #2f422e;
 
     }
     
@@ -257,6 +321,7 @@ transform: rotateY(180deg);
         left:0vw;
     }
     
+
 
 
 .rightarrow{
@@ -273,28 +338,47 @@ transform: rotateY(180deg);
     text-align: center;
     background-size: 100%;
     background-repeat: no-repeat;
-}
+    text-align:center; 
+    background-color: #2f422e;
 
+}
+    
+        
             .rightarrowpositioned{
         top: 4vh;
         right:0vw;
     }
     
+    
+    .rightarrow:hover, .rightarrow:focus, .rightarrow:active, .leftarrow:hover, .leftarrow:focus, .leftarrow:active{
+        
+       filter:brightness(120%);
+        
+    }
+
+    
     .rotateclockwise{
+        position: absolute;
   text-align: center;
   color: white;
   display: block;
-        width: 100%;
+    width: 100%;
+margin-left: 0;
+        margin-right: 0;
+        top: 10vw;
   -ms-transform:rotate(-270deg); /* IE 9 */
   -moz-transform:rotate(-270deg); /* Firefox */
   -webkit-transform:rotate(-270deg); /* Safari and Chrome */
   -o-transform:rotate(-270deg); /* Opera */
     transition: 1.5s ease;
+        text-align: center;
 
 
     }
 
 .rotatecounterclockwise{
+    position: absolute;
+    top: 13vw;
     display: block;
   -ms-transform:rotate(270deg); /* IE 9 */
   -moz-transform:rotate(270deg); /* Firefox */
@@ -310,15 +394,51 @@ transform: rotateY(180deg);
 
 .photodiv{
     
-    width: 10vw;
+    width: 11.35vw;
     height: 50%;
     top: 0;
     left: 30vw;
     z-index: 1000;
     border: 2px solid black;
+    cursor: pointer;
 }
     
+    .photodiv:hover{
+        filter:brightness(120%);
+        
 }
+
+.center{
+  background-color: #465645;
+  color:white;
+  padding:20px 20px 20px 20px;
+  position: absolute;
+  z-index:2;
+  text-align: center;
+  left: -133vw;
+transition: 2s ease;
+}
+#close{
+  background-color: #2E4430;
+    cursor: pointer;
+    color: white;
+    font-size: 2vw;
+    transition: 0.5s ease;
+}
+
+#close:hover{
+  background-color: #2E4430;
+    filter: brightness(1.4);
+}
+
+#paragraph{
+  font-size: 120%;
+}
+.hra{
+  border-color:#2E4430;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 479px) {
 
@@ -329,6 +449,35 @@ transform: rotateY(180deg);
     font-family: 'Raleway', sans-serif;
     overflow: hidden;
 
+}
+    
+     .nav-wrapper {
+	width: 50vw;
+	height: 90px;
+	display: flex;
+    flex-direction: row;
+};
+
+.brand-logo {
+	display: none;
+    visibility:hidden;    
+}
+    
+a {
+	text-decoration: none;
+	
+}
+
+
+
+li {
+	list-style: none;
+	display: inline-block;
+	padding: 10px;
+}
+
+#ask:hover, #close:hover {
+	cursor: pointer;
 }
 
 ::-webkit-scrollbar
@@ -356,19 +505,19 @@ transform: rotateY(180deg);
     position: absolute;
     width: 70vw;
     transition: 1.5s ease;
-    left: 14vw;
+    left: 7vw;
     height: 80vh;
     top: 190vw;
     overflow: hidden;
-    
+    border: 1px solid black;
 }
     
     #removeaddpositioned{
     top: 15vh;
     position: absolute;
-    width: 70vw;
+    width: 75vw;
     transition: 1.5s ease;
-    left: 14vw;
+    left: 7vw;
     height: 80vh;
     overflow: hidden;
     }
@@ -380,7 +529,6 @@ transform: rotateY(180deg);
     border: 2px solid grey;
     left:0;
     top: 30vh;
-
     color: white;
     font-size: 2em;
     transition: 1.5s ease;
@@ -388,6 +536,7 @@ transform: rotateY(180deg);
     background-size: 100%;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-color: #768c73;
 
     }
 
@@ -407,6 +556,7 @@ transform: rotateY(180deg);
     background-size: 100%;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-color: #768c73;
 
     }
 
@@ -414,16 +564,18 @@ transform: rotateY(180deg);
     #explore{
         position: absolute;
         top: 0;
-        border: 2px solid #b9beb8;
+
         transition: 0.5s ease;
         background-image: url(books.png);
         background-size: 50%;
         background-repeat: no-repeat;
-        left: 0;
+
         color: black;
         overflow-y:scroll;
-        font-size: 2em;
-        padding: 1em 2em;
+        font-size: 2vh;
+
+        width: 70vw;
+        margin-left: 0;
 }
 
     #map{
@@ -431,40 +583,46 @@ transform: rotateY(180deg);
         top: 0;
         border: 2px solid #b9beb8;
         transition: 0.5s ease;
-        background-image: url(maps.png);
+
         background-size: 50%;
         background-repeat: no-repeat;
-        left: 0;
+
         color: black;
+        width: 70vw;
+        margin-left: 0;
 }
 
     #weather{
         position: absolute;
         top: 0;
-        border: 2px solid #b9beb8;
+
         transition: 0.5s ease;
         background-image: url(Weather-PNG-Pic.png);
         background-size: 50%;
         background-repeat: no-repeat;
-        left: 0;
+
         color: black;
+        width: 70vw;
+        margin-left: 0;
         
 }
 
     #photos{
         position: absolute;
         top: 0;
-        border: 2px solid #b9beb8;
+
         transition: 0.5s ease;
-        background-image: url(Weather-PNG-Pic.png);
         background-size: 50%;
-        background-repeat: no-repeat;
-        left: 0;
+
         color: black;
-        overflow:scroll:
+        overflow-x:scroll;
+        width: 70vw;
+        margin-left: 0;
         
         
 }
+    
+    
 
 #favourite{
     position: fixed;
@@ -506,10 +664,10 @@ transform: rotateY(180deg);
 
 #favouritesdisplayed{
     position: fixed;
-    top: 10vw;
-    right: -5vw;
-    width: 10vw;
-    height: 20vw;
+    bottom: 0;
+    right: 10vw;
+    width: 80vw;
+    height: 8vh;
     background-color: rgba(40, 66, 35, 0.2);
     transition: 1s ease;
     color: rgb(234, 242, 232);
@@ -544,7 +702,7 @@ transform: rotateY(180deg);
     width: 35vw;
     left: 30vw;
     transition: 1.5s ease;
-    font-size: 2vh;
+    font-size: 4vh;
 }
     
        
@@ -594,21 +752,26 @@ transform: rotateY(180deg);
 
 
     .rotateclockwise{
+  position: absolute;
+  top: 12vh;
   text-align: center;
   color: white;
   display: block;
-        width: 100%;
+  width: 100%;
   -ms-transform:rotate(-270deg); /* IE 9 */
   -moz-transform:rotate(-270deg); /* Firefox */
   -webkit-transform:rotate(-270deg); /* Safari and Chrome */
   -o-transform:rotate(-270deg); /* Opera */
-    transition: 1.5s ease;
+  transition: 1.5s ease;
+  font-size: 4vh;
 
 
     }
 
 .rotatecounterclockwise{
+    position: absolute;
     display: block;
+    top: 20.5vh;
   -ms-transform:rotate(270deg); /* IE 9 */
   -moz-transform:rotate(270deg); /* Firefox */
   -webkit-transform:rotate(270deg); /* Safari and Chrome */
@@ -617,6 +780,7 @@ transform: rotateY(180deg);
 
     width: 100%;
     text-align: center;
+    font-size: 4vh;
 }
 
 
@@ -631,4 +795,36 @@ transform: rotateY(180deg);
     z-index: 1000;
     border: 2px solid black;
 }
+}
+
+.center{
+  background-color:black;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+  color:white;
+  padding:auto;
+  position: absolute;
+  z-index:2;
+  text-align: center;
+  left: -133vw;
+    transition: 2s ease;
+    font-size: 2vw;
+}
+#close{
+  background-color: #2E4430;
+    cursor: pointer;
+}
+
+#close:hover{
+  background-color: #2E4430;
+    filter: brightness(1.4);
+}
+
+#paragraph{
+  font-size: 120%;
+}
+    
+.hra{
+  border-color:#2E4430;
 }

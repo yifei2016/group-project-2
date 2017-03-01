@@ -1,19 +1,22 @@
   <!DOCTYPE html>
   <html>
     <head>
+       <title>MapGo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
 
       <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
       
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="project1.css">
+    
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="earth.png">
+    
+     <link rel="stylesheet" type="text/css" href="project1.css">
     
     <!-- jQuery -->
 
@@ -21,20 +24,38 @@
 <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/flick/jquery-ui.css" />
  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
-<!-- jQuery ends -->
 
-     
-    </head>
-
-    
+<!-- jQuery ends -->     
+      </head>
     <body>
+    
+<nav>
+    <div class="nav-wrapper">
+      <a href="carouseltest.html" class="brand-logo" id='logo'><img src="loggo3.png" style="width: 90px; height: 90px;" alt="logo"></a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="aboutus_html.html" id='about'>About</a></li>
+        <li><a id="ask"><i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i></a></li>
+        <!--make modal here------>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="center">
+    <div class="answer">
+      <h3>How MapGo works</h3>
+      <hr class="hra">
+      <p id="paragraph">Make a search by clicking inside the search bar and press enter or the Go! button. After your search is made, navigate between our different catergories and pick the one you perfer.
+      </p>
+      <button id="close">Got it!</button>
+    </div>
+  </div>
     
     <div class='favourite' id='favourite'></div>
     <div class='favourites' id='favourites'></div>
     
        
     <div class=inputdiv>
-        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus value='Berlin'>
+        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus>
         
         <input id="btn" type="button" value="Search"/>
     </div>
@@ -47,9 +68,11 @@
           
         </div>
         
-        <div class="project1Weather" id='weather' href="#two!">
+        <div style="display:flex;align-items:center; background-image:url(../image/img.jpg)" class="project1Weather" id='weather' href="#two!">
           
         </div>
+        
+       
         
         <div class="project1Explore" id='explore' href="#three!">
         
@@ -60,7 +83,7 @@
          <!--THE BUTTONS------------------------------------->
          
          <div class='leftarrow' id='leftarrow'><span class='rotatecounterclockwise'></span></div>
-         <div class='rightarrow' id='rightarrow'><span class='rotateclockwise'></span></div>
+         <div class='rightarrow' id='rightarrow'><span class='rotateclockwise'>Explore</span></div>
          
          <!------------------------------------------------------->
         

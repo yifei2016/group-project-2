@@ -10,7 +10,9 @@ let removeadd = document.getElementById('removeadd')
 let leftarrow = document.getElementById('leftarrow')
 let rightarrow = document.getElementById('rightarrow')
 let favourite = document.getElementById('favourite')
-let favourites = document.getElementById('favourites')
+let favourites = document.getElementById('favourites');
+let alternativechosen = false;
+let searchedonce;
 
 
 
@@ -33,9 +35,21 @@ function divsPositioned(){
     
 }
 
+
 //-------------------- jQuery-------------------------------------------------------------------------------------------------------
 jQuery(function () 
  {
+    
+    if(locationvalue.value.length>19){
+        
+        locationvalue.style.fontSize='0.5vw';
+    }
+    
+    if(locationvalue.value.length<19){
+        
+        locationvalue.style.fontSize='3vw';
+    }
+    
 	 jQuery("#locationvalue").autocomplete({
 		source: function (request, response) {
 		 jQuery.getJSON(
@@ -51,6 +65,10 @@ jQuery(function ()
 		 jQuery("#f_elem_city").val(selectedObj.value);
 		//jQuery("getcitydetails").val(selectedObj.value);
             console.log('select ?');
+            
+             alternativechosen = true;
+        console.log("alternativechosen: " + alternativechosen)
+        searchbtn.disabled=false;
             $('#locationvalue').val(selectedObj.value);
 		 return false;
 		},
@@ -69,18 +87,43 @@ jQuery(function ()
 
 $(document).ready(function(){
     console.log('document reqdy');
+     ;
     /*$("#locationvalue").on('change', function(){
         console.log('locationvlue change');
     });*/
     $("#locationvalue").click(function(){
         console.log('ui corner all - click')
         $(this).select();
+       
+       
     });
     console.log('document reqdy');
 });
 
 
+//-------------------------HOW IT WORKS-----------------------------------
 
+
+window.onload = function() {
+
+  console.log("dfsdf")
+  let ask = document.getElementById("ask");
+  let center = document.getElementsByClassName("center")[0];
+
+  ask.addEventListener("click", function() {
+
+    let answer = document.getElementsByClassName("answer")[0];
+    // answer.style.top = "0px";
+    center.style.left = "-1.5vw";
+      center.style.backgroundColor='#465645'
+    
+   
+  })
+  let close = document.getElementById("close");
+   close.addEventListener("click", function() {
+      center.style.left = "-133vw";
+    })
+}
 
 
 //-----------------------FUNCTION FAVOURITE---------------------------
@@ -105,7 +148,7 @@ favourites.id='favouritesdisplayed';
     div.style.top=favtop + 'vh';
     div.id=locationvalue.value;
     favouritesdivarray.push(div);
-    favouritevalues.push(locationvalue.value);
+    favouritevalues.push(locationvalue.value.slice(0, locationvalue.value.indexOf(',')));
     favtop+=8;
     favourites.appendChild(div);
         console.log('favouritevalues och favouritesdivarray: ' + favouritevalues, favouritesdivarray);
@@ -144,47 +187,48 @@ favouritesdivarray[i].addEventListener('click', function(){
 
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
     function getExplore(place){
-        
-    
-    let req = new XMLHttpRequest;
-    
-        /*"http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";*/
-    
-   /*https://en.wikipedia.org/w/api.php?format=json&action=query&exlimit=max&explaintext&titles=Albert%20Einstein&prop=revisions&rvprop=content&origin=*            */
-        
-        let url = "https://en.wikipedia.org/w/api.php?format=json&action=query&exlimit=max&explaintext&titles=" + place + "&prop=revisions&rvprop=content&origin=*"
-        req.open('GET', url);
-    
-req.onreadystatechange = function(event) {
 
-	if( req.readyState == 4 ){
+  let req = new XMLHttpRequest
 
+  let url = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + place + "&format=json&origin=*";
 
-    let myPlaceParsed = JSON.parse(req.responseText)//.getElementsByTagName('rev')[0]
-  let displayedtext= '';
+  req.open('GET', url);
+
+  req.onreadystatechange = function(event) {
+
+    if (req.readyState == 4){
+        let myPlaceParsed = JSON.parse(req.responseText)
+        if(myPlaceParsed[2].length!==''){
+      console.log('- success!');
+    console.log("-----");
     
-    console.log(myPlaceParsed)
-    
-    for( let x in myPlaceParsed.query.pages ) {
-        console.log(x)
-        displayedtext = myPlaceParsed.query.pages[x].revisions[0]['*']
-    }
-        
-       
+    let displayedtext = '<h4 style="text-align: center;">Explore ' + place + '</h4><br>'
 
-    //console.log(myPlaceParsed);
+
+    displayedtext += myPlaceParsed[2] + '<br>' + '<br>'
+
+    console.log(myPlaceParsed);
     project1Explore.innerHTML = displayedtext
     //project1Explore.style.top='86px';
-    project1Explore.style.backgroundImage='none'
-    
-    }
+    project1Explore.style.backgroundImage = 'none'
+    };
+        };
+      
+      if(myPlaceParsed[2].length==''){
+          
+          project1Explore.innerHTML = '<h4 style="text-align: center;">"There is not much adventure going on here. Maybe on your next search!" + "</h4><br>"'
+          project1Explore.style.backgroundImage = 'none'
+      }
+  };
 
-};
+  req.send();
 
-req.send();
-    
 
-//console.log('Du sökte: '+ locationvalue.value)
+  //console.log('Du sökte: '+ locationvalue.value)
+
+
+
+
         
         
 
@@ -195,6 +239,14 @@ req.send();
 
 
     function getPhotos(place){
+        
+        if(searchedonce==true){
+            
+            while (project1Photos.hasChildNodes()) {
+    project1Photos.removeChild(project1Photos.lastChild);
+}
+    
+        }
 
 let url = "https://pixabay.com/api/?key=4689657-04d96bcd6fe0af53871ffa1fb&q=" + place + "&image_type=photo";
         
@@ -209,12 +261,41 @@ req.open('GET', url);
                 let myImageObject = JSON.parse(req.responseText);
             console.log(myImageObject.hits[0]);
                 
+                let largerthan = [0-1000];
+                let smallerorequalto = 0;
+                
+                switch(myImageObject.hits.length){
+                        
+                    
+                       
+                    case largerthan:
+                    for(i=0;i<myImageObject.hits.length;i++){
+                    
+                    let imageurl = myImageObject.hits[i].webformatURL;
+                    let photodiv = document.createElement('IMG');
+                    photodiv.className='photodiv';
+                    photodiv.addEventListener('click', function(){
+                        
+                        
+                        
+                    });
+                    photodiv.src=imageurl;
+                    project1Photos.appendChild(photodiv)
+                    
+                }
+                        break;
+                        
+                    case smallerorequalto:
+                        project1Photos.innerHTML="<br><br><br><h2 style='text-align:center;'>There are no photos to show, unfortunately.</h2>"
+                       
+                       }
+                
                 for(i=0;i<myImageObject.hits.length;i++){
                     
                     let imageurl = myImageObject.hits[i].webformatURL;
-                    let photodiv = document.createElement('IMG')
-                    photodiv.className='photodiv'
-                    photodiv.src=imageurl
+                    let photodiv = document.createElement('IMG');
+                    photodiv.className='photodiv';
+                    photodiv.src=imageurl;
                     project1Photos.appendChild(photodiv)
                     
                 }
@@ -224,6 +305,8 @@ req.open('GET', url);
         };
         
         req.send();
+        
+        searchedonce = true;
 
 };
 
@@ -239,9 +322,21 @@ function getPlaceOnMap(place){
         let lng;
           var geocoder =  new google.maps.Geocoder();
     geocoder.geocode( { 'address': place}, function(results, status) {
+        
+        if(!results[0]){
+            
+            console.log('No results')
+            
+        };
+            
+        
+            
+            
           if (status == google.maps.GeocoderStatus.OK) {
              let lat = results[0].geometry.location.lat() 
              let lng = results[0].geometry.location.lng();
+              
+
              
               //console.log('Detta är latitude och longitud: ' + lat, lng)
               
@@ -263,6 +358,8 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
         project1Map.style.backgroundImage='none';
           }
         
+        
+        
  
 
         else {
@@ -275,30 +372,38 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
            
 
 //-----------------------------------------------------FUNCTION GET WEATHER--------------------------------------------------------------------------
-function getWeather(place){
-    let req = new XMLHttpRequest();
-    req.onreadystatechange = function(event) {
-      if( req.readyState == 4 ){
-        let res = JSON.parse(req.responseText);
-        //console.log(req.responseText)
-        
-        let data = `<h5 style=color:green;>${place} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
-        //let data = "<h5 style=color:green;>"+inputValue
-        
-       project1Weather.innerHTML = data;
-       project1Weather.style.backgroundImage='none'
+function getWeather() {
+  let req = new XMLHttpRequest();
+  req.onreadystatechange = function(event) {
+    if (req.readyState == 4) {
+      let res = JSON.parse(req.responseText);
+        console.log(res)
 
+
+     let icon = res.weather[0].icon;
+      let iconsrc = `http://openweathermap.org/img/w/${icon}.png`;
+      // weathericon.src=iconsrc;
+
+     let data = `<div style="margin:auto; text-align:center;"><h2 style="color:white;">${locationvalue.value} weather:</h2><p style=" font-size:4vw;">${res.weather[0].main}, ${res.weather[0].description},
+        Wind speed: ${res.wind.speed}, Temperature: ${res.main.temp}, °C <img src=${iconsrc}></p></div>`;
+        data.replace("Â", "");
+        console.log(data)
         
-      }
-    };
-    
-    
-    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${place}&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
-    //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
-    req.send();
-    
-    //project1Weather.style.top='86px';
-} 
+        //data.indexOf('Â') = ''
+      project1Weather.innerHTML = data;
+      console.log("spppp")
+      //  project1Weather.style.backgroundImage='none'
+
+   }
+  };
+
+
+ req.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&APPID=2d3055ddb7941ccc16f48f3aaeb29121&units=metric`) //es 6
+  //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
+  req.send();
+
+ //project1Weather.style.top='86px';
+}
 
 //-----------------FUNCTION GET WEATHER ENDS------------------
 
@@ -325,30 +430,31 @@ contentarray.push(project1Map, project1Explore, project1Weather, project1Photos)
         getWeather(searchstring1);
         getPhotos(searchstring1);
     };
+
+
     
 function Slide(){
     
-    let rightstringarray = ['Explore', 'Weather', ''];
-    let leftstringarray = ['', 'Map', 'Explore'];
+    let rightstringarray = ['Explore', 'Weather', 'Photos', ''];
+    let leftstringarray = ['', 'Map', 'Explore', 'Weather'];
 
 
     
-    let leftvalue = -61;
+    let leftvalue = -66;
     let leftvaluearray = [];
     
     for(i=0;i<contentarray.length; i++){
     
-    leftvalue += 66
+    leftvalue += 71.5;
     leftvaluearray.push(leftvalue)
     
     newleftvalue = leftvalue.toString() + 'vw'
     
-    contentarray[i].className='col-xs-4'
+    
     contentarray[i].style.position = 'absolute'
     contentarray[i].style.top = '4vh'
     //contentarray[i].style.outline='3.5px solid #b9beb8'
     contentarray[i].style.height = '85%'
-    contentarray[i].style.width = '60vw'
     contentarray[i].style.backgroundSize = "100%"
     contentarray[i].style.opacity='1'
     contentarray[i].style.left=newleftvalue
@@ -364,10 +470,10 @@ function Slide(){
 
               function arrowInnerHTML(){
                   
-        //textcounterclockwise.innerHTML = leftstringarray[rightclicks];
-        //textclockwise.innerHTML = rightstringarray[rightclicks];
-        leftarrow.style.backgroundImage = leftbackgroundarray[rightclicks];
-        rightarrow.style.backgroundImage = rightbackgroundarray[rightclicks];
+        textcounterclockwise.innerHTML = leftstringarray[rightclicks];
+        textclockwise.innerHTML = rightstringarray[rightclicks];
+        //leftarrow.style.backgroundImage = leftbackgroundarray[rightclicks];
+        //rightarrow.style.backgroundImage = rightbackgroundarray[rightclicks];
   
             }
        
@@ -377,7 +483,7 @@ function Slide(){
         leftarrow.addEventListener('click', function(){
                     
         var leftvalue1 = 0
-        const sixtysix=66;
+        const sixtysix=71.5;
         
         if(rightclicks>0 && leftclicks<5){
             
@@ -419,7 +525,7 @@ function Slide(){
             for(i=0;i<contentarray.length; i++){
                
                 for(i=0;i<leftvaluearray.length;i++){
-                    leftvaluearray[i]-=66
+                    leftvaluearray[i]-=71.5
 
                     leftvalue1 = leftvaluearray[i]
                 let newleftvalue1 = leftvalue1.toString() + 'vw'
@@ -440,25 +546,51 @@ function Slide(){
     
     Slide()
     
+ 
+    
     locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
+        
+        if(alternativechosen==true){
+        alternativechosen = false;
+        console.log(alternativechosen)
       
         divsPositioned();
         
            setTimeout(function(){
-            runSearch(locationvalue.value);
+            runSearch(locationvalue.value.slice(0, locationvalue.value.indexOf(',')));
         }, 1500);
        }
+        
+    };
+         
 });
-    
+     
+
+
     searchbtn.addEventListener('click', function(){
-       
+        
+        if(alternativechosen==true){
+    alternativechosen = false;
+
+       console.log(alternativechosen)
         divsPositioned();
         
         setTimeout(function(){
-            runSearch(locationvalue.value);
+            runSearch(locationvalue.value.slice(0, locationvalue.value.indexOf(',')));
         }, 1500);
+            
+            searchbtn.disabled=true
+            
+        };
         
 });
+
+
+
+    
+
+
+
 
 addFavourite()
