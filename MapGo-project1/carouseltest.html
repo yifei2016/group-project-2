@@ -1,78 +1,119 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
   <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="project1.css">
-      <!--<link rel="shortcut icon" href="favicon.ico">-->
-      <link rel="icon" type="image/png" href="earth.png">
-    </head>
-
+      
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     
-    <body id="body">
-	
-     <!--The navbar-->
-	 
-	<nav id="header-nav" style="background-color: rgba(46, 68, 48, 0.3);">
-    <div class="nav-wrapper" >
-      <div id="justify-logo"><a href="carouseltest.html" class="brand-logo left"><!--img src="logomapgo.png" style="width:2.3em"></a></div-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="earth.png">
+    
+     <link rel="stylesheet" type="text/css" href="project1.css">
+    
+    <!-- jQuery -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/flick/jquery-ui.css" />
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+<!-- jQuery ends -->     
+      </head>
+    <body>
+    
+ <nav>
+    <div class="nav-wrapper">
+      <a href="carouseltest.html" class="brand-logo left"><img src="logomapgo.png" style="width: 2.3em;" alt="logo"></a>
       <ul id="nav-mobile" class="right">
         <li><a href="carouseltest.html">Home</a></li>
         <li><a href="aboutus.html">About</a></li>
-        <li><a href="#">How it Works</a></li> 
+        <li><a id="ask"><i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i></a></li>
+        <!--make modal here------>
       </ul>
     </div>
   </nav>
-  
-     <!--Slut på nav-->
-	 
-    <div class="inputdiv">
-	
-        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus>
-		
-        <input id="btn" type="button" value="Search"/>
-		</div>
+
+  <div class="center">
+    <div class="answer">
+      <h3>How MapGo works</h3>
+      <hr class="hra">
+      <p id="paragraph">Make a search by clicking inside the search bar and press enter or the Go! button. After your search is made, navigate between our different catergories and pick the one you perfer.
+      </p>
+      <button id="close">Close</button>
+    </div>
+  </div>
     
+    <div class='favourite' id='favourite'></div>
+    <div class='favourites' id='favourites'></div>
+    
+       
+    <div class="inputdiv">
+        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus value='Berlin'>
+        
+        <input id="btn" type="button" value="Search"/>
+    </div>
      
      
 
-        <div id='removeadd' class="row">
+        <div id='removeadd'>
         
-        <div class="project1Map" id='map'>
+        <div class="project1Map" id='map' href="#one!">
           
         </div>
         
-        <div class="project1Weather" id='weather'>
+        <div class="project1Weather" id='weather' href="#two!">
           
         </div>
         
-        <div class="project1Explore" id='explore'>
+        <div class="project1Explore" id='explore' href="#three!">
         
+        </div>
+        
+        <div class="project1Photos" id='photos' href="#four!">
+        </div>
+         <!--THE BUTTONS------------------------------------->
+         
+         <div class='leftarrow' id='leftarrow'><span class='rotatecounterclockwise'></span></div>
+         <div class='rightarrow' id='rightarrow'><span class='rotateclockwise'></span></div>
+         
+         <!------------------------------------------------------->
+        
+        
+        
+  
+ 
+     
+     <!--
+  <div class="carousel" id='idcarousel'>
+
+    <a class="carousel-item project1Map" id='map' href="#one!"></a>
+    <a class="carousel-item project1Weather" id='weather' href="#two!"></a>
+    <a class="carousel-item project1Explore" id='explore' href="#three!"></a>
     
-            
-        </div>
+   
+  </div>
+    
+    -->
+     
+ 
+     
+     
+      <!--Import jQuery before materialize.js-->
+
+      <script src="project1.js"></script>
         
-         
-         
-         <button class='leftarrow' id='leftarrow'><span class='rotatecounterclockwise'></span></button>
-         <button class='rightarrow' id='rightarrow'><span class='rotateclockwise'>Explore</span></button>
-         
-        
-        
-        </div>
-        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6KmbFZq8qoOjMYzd4KEyZBnI7_XTZhAY&callback=myMap"></script>
+   
 
       
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYVbw5CTgu9U-rCaBdJWEpxpj-2YyaDA4&callback=myMap"></script>
-        <script src="project1.js"></script>
+
     </body>
   </html>
