@@ -5,6 +5,7 @@ window.onload=function(){
 };
 
 
+
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
     function getExplore(){
         
@@ -36,6 +37,7 @@ console.log('- success!');
 req.send();
     
 
+
 //console.log('Du sökte: '+ locationvalue.value)
         
         
@@ -61,6 +63,7 @@ function getPlaceOnMap(){
         zoom: 11,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
                     
         var marker = new google.maps.Marker({
@@ -117,6 +120,7 @@ function getWeather(){
     
     req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&units=metric&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
     //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
+
     req.send();
     
     //project1Weather.style.top='86px';
