@@ -3,9 +3,7 @@ body{
     background-size: 100%;
     /*background-repeat: no-repeat;*/
     font-family: 'Raleway', sans-serif;
-    /*display: flex;
-	min-height: 100vh;
-	flex-direction: column;*/
+    
 }
 
 html, #body {
@@ -174,6 +172,8 @@ html, #body {
 }
 nav div img {
 	margin-top: 3px;
+	max-height: 64px;
+	margin-bottom: 4px;
 }
 
 /*-----------Media Queries-----------*/
@@ -259,7 +259,6 @@ nav div img {
     background-color: #e0e0e0;
     color: #635822;
     transition: 1.5s ease;
-    font-family: 'Raleway', sans-serif;
     left: 80%;
 }
 
@@ -277,6 +276,7 @@ nav div img {
     border: 2px solid grey;
     background-color: grey;
     top: 4vh;
+    background-color: rgba(46, 68, 48, 0.3);
     left: 0vw;
     border-bottom: none;
   }
@@ -295,7 +295,6 @@ nav div img {
   }
 }
 */
-
 
 
 nav div img {
