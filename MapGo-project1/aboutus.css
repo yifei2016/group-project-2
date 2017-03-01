@@ -4,6 +4,50 @@ body {
   font-family: 'Raleway', sans-serif;
   color: #2E4430;
   margin: 0px;
+  padding: 0;
+}
+
+/*nav*/
+.nav-wrapper {
+	width: 50vw;
+	height: 90px;
+	display: flex;
+    flex-direction: row;
+}
+
+.brand-logo {
+	display: inline-block;
+}
+a {
+	text-decoration: none;
+	
+}
+
+
+
+li {
+	list-style: none;
+	display: inline-block;
+	padding: 10px;
+}
+
+/*modal*/
+.center{
+  visibility: hidden;
+  background-color:black;
+  color:white;
+  padding:20px 20px 20px 20px;
+  position: absolute;
+  z-index:2;
+}
+#close{
+  background-color: #2E4430;
+}
+#paragraph{
+  font-size: 120%;
+}
+.hra{
+  border-color:#2E4430;
 }
 ::-webkit-scrollbar {
   width: 8px;  /* for vertical scrollbars */
