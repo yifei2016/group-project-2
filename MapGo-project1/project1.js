@@ -4,6 +4,16 @@ window.onload=function(){
     }, 100)
 };
 
+let inputDiv = document.getElementsByClassName('inputdiv')[0]
+let removeadd = document.getElementById('removeadd')
+
+
+
+function divsPositioned(){
+    removeadd.style.top='15vh';
+    inputDiv.style.top='5vh';
+};
+
 
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
     function getExplore(){
@@ -26,7 +36,7 @@ console.log('- success!');
         
        displayedtext+= myPlaceParsed[2] + '<br>'+'<br>'
 
-    console.log(myPlaceParsed);
+    //console.log(myPlaceParsed);
     project1Explore.innerHTML = displayedtext
     //project1Explore.style.top='86px';
     project1Explore.style.backgroundImage='none'
@@ -40,7 +50,7 @@ req.send();
         
         
 
-}
+};
 
 //-----------------------------------------------------------FUNCTION GET PLACE ON MAP----------------------------------------------------------
 function getPlaceOnMap(){
@@ -67,7 +77,7 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
           position: {lat: lat, lng: lng},
           map: map
         });
-      }
+      };
         
         myMap()
         //project1Map.style.top='86px'
@@ -95,41 +105,31 @@ function getWeather(){
         let res = JSON.parse(req.responseText);
         console.log(req.responseText)
         
-        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description}, wind speed: ${res.wind.speed}, temperature: ${res.main.temp}</p>, <img src=iconsrc>`;
+        let data = `<h5 style=color:green;>${locationvalue.value} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
         //let data = "<h5 style=color:green;>"+inputValue
-        
-        let weathericon = document.createElement('IMG');
-        let iconpath = res.weather[0].icon + '.png)';
-        
-        let iconsrc = 'url(http://openweathermap.org/img/w/' + iconpath;
-        
-        weathericon.src=iconsrc;
-
-
         
        project1Weather.innerHTML = data;
        project1Weather.style.backgroundImage='none'
-       project1Weather.appendChild(weathericon);
+
         
       }
     };
     
     
-    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&units=metric&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
+    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
     //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
     req.send();
     
     //project1Weather.style.top='86px';
-} 
+};
 
 //-----------------FUNCTION GET WEATHER ENDS------------------
 
 
 //-------------THESE ARE THE DIVS IN WHICH TO DISPLAY THE API RESPONSES, SHOULD BE SWITCHED TO THE DIVS USED IN THE HTML & CSS TEMPLATE---//
-let project1Map = document.getElementById('map')
-
-let project1Explore = document.getElementById('explore')
-let project1Weather = document.getElementById('weather')
+let project1Map = document.getElementById('map');
+let project1Explore = document.getElementById('explore');
+let project1Weather = document.getElementById('weather');
 
 let contentarray = [];
 contentarray.push(project1Map, project1Explore, project1Weather)
@@ -158,33 +158,38 @@ for(i=0; i<=2; i++){
     
 //---------------------------------------------------------------------------------------------------------------------------//
 
-    let searchbtn = document.getElementById("btn")
+    let searchbtn = document.getElementById("btn");
     
-    let locationvalue = document.getElementById('locationvalue')
+    let locationvalue = document.getElementById('locationvalue');
     
     function runSearch(){
         getExplore();
         getPlaceOnMap();
         getWeather();
-    }
+    };
     
 locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
       runSearch();
+        divsPositioned();
        }
 });
     
     searchbtn.addEventListener('click', function(){
        runSearch();
-        
+        divsPositioned();
+		console.log('divspos och runsearch :')
 });
 
 
 
 function Slide(){
     
+    let rightstringarray = ['Explore', 'Weather', ''];
+    let leftstringarray = ['', 'Map', 'Explore'];
+    
     let leftvalue = -61;
-    let leftvaluearray = []
+    let leftvaluearray = [];
     
     for(i=0;i<contentarray.length; i++){
     
@@ -196,28 +201,38 @@ function Slide(){
     contentarray[i].className='col-xs-4'
     contentarray[i].style.position = 'absolute'
     contentarray[i].style.top = '4vh'
-    contentarray[i].style.outline='3.5px solid #b9beb8'
+    //contentarray[i].style.outline='3.5px solid #b9beb8'
     contentarray[i].style.height = '85%'
     contentarray[i].style.width = '60vw'
     contentarray[i].style.padding = '0 0'
-    
     contentarray[i].style.backgroundSize = "100%"
     contentarray[i].style.opacity='1'
     contentarray[i].style.left=newleftvalue
-    
     contentarray[i].style.transition='1.5s ease'
     contentarray[i].style.float='left'
-    contentarray[i].style.border='2px solid white'
+    //contentarray[i].style.border='2px solid white'
     };
     
         let leftarrow = document.getElementById('leftarrow')
     
-    let rightarrow = document.getElementById('rightarrow')
+        let rightarrow = document.getElementById('rightarrow')
+        
+        let textclockwise = document.getElementsByClassName('rotateclockwise')[0]
+        let textcounterclockwise = document.getElementsByClassName('rotatecounterclockwise')[0]
+              function arrowInnerHTML(){
+                  
+        textcounterclockwise.innerHTML = leftstringarray[rightclicks]
+        textclockwise.innerHTML = rightstringarray[rightclicks]
+        
+            }
        
         let leftclicks = 0;
         let rightclicks = 0;
         
         leftarrow.addEventListener('click', function(){
+        
+            
+      
              
         var leftvalue1 = 0
         const sixtysix=66;
@@ -231,36 +246,39 @@ function Slide(){
                
                 for(i=0;i<leftvaluearray.length;i++){
                     leftvaluearray[i]+=sixtysix
-                    console.log('det här är leftvaluearray: ' + leftvaluearray)
+
                     leftvalue1 = leftvaluearray[i]
                 let newleftvalue1 = leftvalue1.toString() + 'vw'
 
                 contentarray[i].style.left=newleftvalue1
                 };
-                  console.log('contentarray skrivs ut :' + contentarray)
-                 contentarray[i].style.left=newleftvalue1
+                
+
             };
         };
-            console.log(rightclicks, leftclicks)
+            console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+            arrowInnerHTML();
     });
+    
+     
 
     
     rightarrow.addEventListener('click', function(){
+        
          var leftvalue1 = 0
                
-        if(leftclicks<=2 && rightclicks<2){
+         if(leftclicks<=2 && rightclicks<2){
          rightclicks++
          
          if(leftclicks !== 0){
          leftclicks-- 
          };
-         console.log(rightclicks, leftclicks)
          if(leftclicks<=3 && rightclicks<=2){
             for(i=0;i<contentarray.length; i++){
                
                 for(i=0;i<leftvaluearray.length;i++){
                     leftvaluearray[i]-=66
-                    console.log('det här är leftvaluearray: ' + leftvaluearray)
+
                     leftvalue1 = leftvaluearray[i]
                 let newleftvalue1 = leftvalue1.toString() + 'vw'
 
@@ -268,29 +286,24 @@ function Slide(){
                 };
 
 
-                contentarray[i].style.left=newleftvalue1
+                
 
             };
          };
         };
    
+
+        
+        console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
+        arrowInnerHTML();
         
     });
-    
-         if(rightclicks===0){
-            rightarrow.innerHTML = 'Explore';
-            leftarrow.innerHTML= '';
-        }
         
-        if(rightclicks===1){
-            rightarrow.innerHTML = 'Weather';
-            leftarrow.innerHTML= 'Map';
-        }
-        
-        if(rightclicks===2){
-            rightarrow.innerHTML = '';
-            leftarrow.innerHTML= 'Explore';
-        }
+       
+
 }
     
     Slide()
+
+
+
