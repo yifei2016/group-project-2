@@ -33,20 +33,70 @@ function divsPositioned(){
     
 }
 
+//-------------------- jQuery-------------------------------------------------------------------------------------------------------
+jQuery(function () 
+ {
+	 jQuery("#locationvalue").autocomplete({
+		source: function (request, response) {
+		 jQuery.getJSON(
+			"http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+			function (data) {
+			 response(data);
+			}
+		 );
+		},
+		minLength: 3,
+		select: function (event, ui) {
+		 var selectedObj = ui.item;
+		 jQuery("#f_elem_city").val(selectedObj.value);
+		//jQuery("getcitydetails").val(selectedObj.value);
+            console.log('select ?');
+            $('#locationvalue').val(selectedObj.value);
+		 return false;
+		},
+		open: function () {
+		 jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+		},
+		close: function () {
+		 jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+		}
+	 });
+	 jQuery("#f_elem_city").autocomplete("option", "delay", 100);
+	});
+
+
+//error regarding the when you click on search text button, it dosen't select the city you need to do it with arrows on keyboard.
+
+$(document).ready(function(){
+    console.log('document reqdy');
+    /*$("#locationvalue").on('change', function(){
+        console.log('locationvlue change');
+    });*/
+    $("#locationvalue").click(function(){
+        console.log('ui corner all - click')
+        $(this).select();
+    });
+    console.log('document reqdy');
+});
+
+
+
+
+
 //-----------------------FUNCTION FAVOURITE---------------------------
 
-function addFavourite (){
-    
 
+
+function addFavourite (){
 
 let favtop=0;
 let favouritesdivarray=[];
 let favouritevalues = [];
 let idnumber=0;
+    
 favourite.addEventListener('click', function(){
 favourites.id='favouritesdisplayed';
-
-
+    
     idnumber++
     
     let div = document.createElement('DIV');
@@ -88,6 +138,8 @@ favouritesdivarray[i].addEventListener('click', function(){
 };
     
     }
+
+
 
 
 //------------------------------------------FUNCTION GET EXPLORE TEXT-------------------------------------------------------------------------------
@@ -144,41 +196,36 @@ req.send();
 
     function getPhotos(place){
 
-    let req = new XMLHttpRequest;
-    
-        /*"http://en.wikipedia.org/w/api.php?action=opensearch&search=" + locationvalue.value + "&format=json&origin=*";*/
-    
-   /*https://en.wikipedia.org/w/api.php?format=json&action=query&exlimit=max&explaintext&titles=Albert%20Einstein&prop=revisions&rvprop=content&origin=*            */
+let url = "https://pixabay.com/api/?key=4689657-04d96bcd6fe0af53871ffa1fb&q=" + place + "&image_type=photo";
         
-        let url = "GET https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase=" + place;
-        req.open('GET', url);
-    
-req.onreadystatechange = function(event) {
+        let req = new XMLHttpRequest;
 
-	if( req.readyState == 4 ){
-
-
-    let myPlaceParsed = JSON.parse(req.responseText)//.getElementsByTagName('rev')[0];
-  let displayedtext= '';
-    
-    console.log(myPlaceParsed)
-    
-    /*for( let x in myPlaceParsed.query.pages ) {
-        console.log(x)
-        displayedtext = myPlaceParsed.query.pages[x].revisions[0]['*']
-    }*/
-        
-
-    
-    }
-
-};
-
-req.send();
-    
+req.open('GET', url);
   
 
-}
+        req.onreadystatechange = function(){
+            if( req.readyState == 4 ){
+            
+                let myImageObject = JSON.parse(req.responseText);
+            console.log(myImageObject.hits[0]);
+                
+                for(i=0;i<myImageObject.hits.length;i++){
+                    
+                    let imageurl = myImageObject.hits[i].webformatURL;
+                    let photodiv = document.createElement('IMG')
+                    photodiv.className='photodiv'
+                    photodiv.src=imageurl
+                    project1Photos.appendChild(photodiv)
+                    
+                }
+            
+            }; 
+            
+        };
+        
+        req.send();
+
+};
 
 
 
@@ -279,16 +326,12 @@ contentarray.push(project1Map, project1Explore, project1Weather, project1Photos)
         getPhotos(searchstring1);
     };
     
-
-
-
-
 function Slide(){
     
     let rightstringarray = ['Explore', 'Weather', ''];
     let leftstringarray = ['', 'Map', 'Explore'];
-    let rightbackgroundarray = ['url(exploreright.png)', 'url(weatherright.png)', 'url(weatherright.png)']
-    let leftbackgroundarray = ['url(exploreright.png)', 'url(mapbackground.png)', 'url(exploreleft.png)']
+
+
     
     let leftvalue = -61;
     let leftvaluearray = [];
@@ -325,19 +368,14 @@ function Slide(){
         //textclockwise.innerHTML = rightstringarray[rightclicks];
         leftarrow.style.backgroundImage = leftbackgroundarray[rightclicks];
         rightarrow.style.backgroundImage = rightbackgroundarray[rightclicks];
-
-
-        
+  
             }
        
         let leftclicks = 0;
         let rightclicks = 0;
         
         leftarrow.addEventListener('click', function(){
-        
-            
-      
-             
+                    
         var leftvalue1 = 0
         const sixtysix=66;
         
@@ -389,21 +427,14 @@ function Slide(){
                 contentarray[i].style.left=newleftvalue1
                 };
 
-
-                
-
             };
          };
         };
-   
 
-        
         console.log('Det här är rightclicks: ' + rightclicks + ' Det här är leftclicks: ' + leftclicks)
         arrowInnerHTML();
         
     });
-        
-       
 
 }
     
@@ -411,15 +442,23 @@ function Slide(){
     
     locationvalue.addEventListener('keydown', function(key){
     if(event.keyCode==13){
-      runSearch(locationvalue.value);
+      
         divsPositioned();
+        
+           setTimeout(function(){
+            runSearch(locationvalue.value);
+        }, 1500);
        }
 });
     
     searchbtn.addEventListener('click', function(){
-       runSearch(locationvalue.value);
+       
         divsPositioned();
+        
+        setTimeout(function(){
+            runSearch(locationvalue.value);
+        }, 1500);
+        
 });
 
 addFavourite()
-
