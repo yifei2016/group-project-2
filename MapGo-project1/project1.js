@@ -294,30 +294,33 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
            
 
 //-----------------------------------------------------FUNCTION GET WEATHER--------------------------------------------------------------------------
-function getWeather(place){
-    let req = new XMLHttpRequest();
-    req.onreadystatechange = function(event) {
-      if( req.readyState == 4 ){
-        let res = JSON.parse(req.responseText);
-        //console.log(req.responseText)
-        
-        let data = `<h5 style=color:green;>${place} weather:</h5><p style="color:red;">${res.name},${res.weather[0].description},wind speed: ${res.wind.speed}</p>`;
-        //let data = "<h5 style=color:green;>"+inputValue
-        
-       project1Weather.innerHTML = data;
-       project1Weather.style.backgroundImage='none'
+ function getWeather() {
+  let req = new XMLHttpRequest();
+  req.onreadystatechange = function(event) {
+    if (req.readyState == 4) {
+      let res = JSON.parse(req.responseText);
 
-        
-      }
-    };
-    
-    
-    req.open('GET',`http://api.openweathermap.org/data/2.5/weather?q=${place}&APPID=2d3055ddb7941ccc16f48f3aaeb29121`) //es 6
-    //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
-    req.send();
-    
-    //project1Weather.style.top='86px';
-} 
+
+      let icon = res.weather[0].icon;
+      let iconsrc = `http://openweathermap.org/img/w/${icon}.png`;
+      // weathericon.src=iconsrc;
+
+      let data = `<div style="margin:auto; text-align:center;"><h5 style="color:white;">${locationvalue.value} weather:</h5><p style="color:white; font-size:120%;">${res.weather[0].main}, description: ${res.weather[0].description},
+        wind speed: ${res.wind.speed}, temperature: ${res.main.temp} °C <img src=${iconsrc}></p></div>`;
+      project1Weather.innerHTML = data;
+      console.log("spppp")
+      //  project1Weather.style.backgroundImage='none'
+
+    }
+  };
+
+
+  req.open('GET', `http://api.openweathermap.org/data/2.5/weather?q=${locationvalue.value}&APPID=2d3055ddb7941ccc16f48f3aaeb29121&units=metric`) //es 6
+  //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+inputValue+'&APPID=2d3055ddb7941ccc16f48f3aaeb29121');
+  req.send();
+
+  //project1Weather.style.top='86px';
+}
 
 //-----------------FUNCTION GET WEATHER ENDS------------------
 
