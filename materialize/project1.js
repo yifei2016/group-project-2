@@ -146,7 +146,7 @@ favourites.id='favouritesdisplayed';
     div.className='favouritesdiv';
     div.innerHTML=locationvalue.value;
     div.style.top=favtop + 'vh';
-    div.id=locationvalue.value;
+    div.id=locationvalue.value.slice(0, locationvalue.value.indexOf(','));
     favouritesdivarray.push(div);
     favouritevalues.push(locationvalue.value.slice(0, locationvalue.value.indexOf(',')));
     favtop+=8;
@@ -429,6 +429,7 @@ contentarray.push(project1Map, project1Explore, project1Weather, project1Photos)
         getPlaceOnMap(searchstring1);
         getWeather(searchstring1);
         getPhotos(searchstring1);
+        console.log('search from searchbar: ' + searchstring1)
     };
 
 
