@@ -175,7 +175,7 @@ li {
     top: 2.5vw;
     width: 5vw;
     height: 5vw;
-    background-image: url(icons/addfavorite.png);
+    background-image: url(Icons/addfavorite.png);
     /*background-color: rgba(50, 76, 50, 0.1);*/
         background-size:100%;
     transition: 0.5s ease;
