@@ -1,0 +1,126 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+       <title>MapGo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="earth.png">
+    
+     <link rel="stylesheet" type="text/css" href="project1.css">
+    
+    <!-- jQuery -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/flick/jquery-ui.css" />
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+<!-- jQuery ends -->     
+      </head>
+    <body>
+    
+<nav>
+    <div class="nav-wrapper">
+      <a href="carouseltest.html" class="brand-logo" id='logo'><img src="loggo3.png" style="width: 90px; height: 90px;" alt="logo"></a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="aboutus_html.html" id='about'>About</a></li>
+        <li><a id="ask"><i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i></a></li>
+        <!--make modal here------>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="center">
+    <div class="answer">
+      <h3>How MapGo works</h3>
+      <hr class="hra">
+<p id="paragraph">Please write the place name and choose from our options based on your search,
+        and press enter or the Search button. After your search is made,
+        navigate between our different categories such as explore, weather or map,
+        feel free to pick the one you perfer. More cool stuff is you are
+        able to save your favorite place by clicking the favorite button, then your favorite place will
+        stay somewhere and be waiting for you to look back!
+      </p>
+      <button id="close">Got it!</button>
+    </div>
+  </div>
+    
+    <div class='favourite' id='favourite'></div>
+    <div class='favourites' id='favourites'></div>
+    
+       
+    <div class=inputdiv>
+        <input type="text" placeholder='Type your location' id='locationvalue' class='textarea' autofocus>
+        
+        <input id="btn" type="button" value="Search"/>
+    </div>
+     
+     
+
+        <div id='removeadd'>
+        
+        <div class="project1Map" id='map' href="#one!">
+          
+        </div>
+        
+        <div style="display:flex;align-items:center; background-image:url(../image/img.jpg)" class="project1Weather" id='weather' href="#two!">
+          
+        </div>
+        
+       
+        
+        <div class="project1Explore" id='explore' href="#three!">
+        
+        </div>
+        
+        <div class="project1Photos" id='photos' href="#four!">
+        </div>
+         <!--THE BUTTONS------------------------------------->
+         
+         <div class='leftarrow' id='leftarrow'><span class='rotatecounterclockwise'></span></div>
+         <div class='rightarrow' id='rightarrow'><span class='rotateclockwise'>Explore</span></div>
+         
+         <!------------------------------------------------------->
+        
+        
+        
+  
+ 
+     
+     <!--
+  <div class="carousel" id='idcarousel'>
+
+    <a class="carousel-item project1Map" id='map' href="#one!"></a>
+    <a class="carousel-item project1Weather" id='weather' href="#two!"></a>
+    <a class="carousel-item project1Explore" id='explore' href="#three!"></a>
+    
+   
+  </div>
+    
+    -->
+     
+ 
+     
+     
+      <!--Import jQuery before materialize.js-->
+
+      <script src="project1.js"></script>
+        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6KmbFZq8qoOjMYzd4KEyZBnI7_XTZhAY&callback=myMap"></script>
+   
+
+      
+        
+
+    </body>
+  </html>
